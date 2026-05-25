@@ -182,7 +182,7 @@ function Nav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (v: bo
             {["About", "Work", "Services", "Contact"].map((link) => (
               <a
                 key={link}
-                href={`#${link.toLowerCase()}`}
+                href={link === 'Work' ? '/work' : `#${link.toLowerCase()}`}
                 className="text-[0.975rem] text-white/40 hover:text-white transition-colors duration-300 tracking-wide"
               >
                 {link}
@@ -227,7 +227,7 @@ function Nav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (v: bo
           {["About", "Work", "Services", "Contact"].map((link) => (
             <a
               key={link}
-              href={`#${link.toLowerCase()}`}
+              href={link === 'Work' ? '/work' : `#${link.toLowerCase()}`}
               onClick={() => setMenuOpen(false)}
               className="text-4xl font-display font-700 gradient-text-subtle hover:gradient-text transition-all"
             >
@@ -909,7 +909,6 @@ export default function HomePage() {
         <main>
           <Hero />
           <About />
-          <Work />
           <Services />
           <Contact />
           <Footer />
