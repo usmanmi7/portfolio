@@ -331,18 +331,17 @@ function Hero() {
               {[...Array(3)].map((_, setIdx) => (
                 <div key={`up-${setIdx}`}>
                   {PROJECTS.map((project, i) => (
-                    <div key={`up-${setIdx}-${i}`} className="relative aspect-[4/3] rounded-xl overflow-hidden mb-3 border border-white/[0.04]">
+                    <div key={`up-${setIdx}-${i}`} className="relative aspect-[4/3] rounded-xl overflow-hidden mb-3">
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
                         className="object-cover"
                       />
-                      {/* Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-[#050505]/30 to-[#050505]/10" />
-                      <div className="absolute inset-0 bg-[#ff6b35]/[0.03]" />
+                      {/* Subtle overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/50 to-transparent" />
                       <div className="absolute bottom-3 left-3 right-3">
-                        <p className="text-xs font-display font-600 text-white/50">{project.title}</p>
+                        <p className="text-xs font-display font-600 text-white/40">{project.title}</p>
                       </div>
                     </div>
                   ))}
@@ -357,32 +356,23 @@ function Hero() {
               {[...Array(3)].map((_, setIdx) => (
                 <div key={`down-${setIdx}`}>
                   {[...PROJECTS].reverse().map((project, i) => (
-                    <div key={`down-${setIdx}-${i}`} className="relative aspect-[4/3] rounded-xl overflow-hidden mb-3 border border-white/[0.04]">
+                    <div key={`down-${setIdx}-${i}`} className="relative aspect-[4/3] rounded-xl overflow-hidden mb-3">
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
                         className="object-cover"
                       />
-                      {/* Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-[#050505]/30 to-[#050505]/10" />
-                      <div className="absolute inset-0 bg-[#c084fc]/[0.03]" />
+                      {/* Subtle overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/50 to-transparent" />
                       <div className="absolute bottom-3 left-3 right-3">
-                        <p className="text-xs font-display font-600 text-white/50">{project.title}</p>
+                        <p className="text-xs font-display font-600 text-white/40">{project.title}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Edge fade overlays for smooth look */}
-          <div className="absolute inset-0 pointer-events-none z-10">
-            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#050505] to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#050505] to-transparent" />
-            <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#050505] to-transparent" />
-            <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#050505] to-transparent" />
           </div>
         </div>
         {/* Bottom marquee */}
