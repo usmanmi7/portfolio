@@ -707,7 +707,7 @@ function Services() {
       </div>
 
       {/* Cards row — full width with hero-matching padding, transform-based carousel */}
-      <div className="pl-6 md:pl-10 relative z-10 overflow-hidden">
+      <div className="pl-6 md:pl-10 pt-2 -mt-2 relative z-10" style={{ overflowX: 'clip', overflowY: 'visible' }}>
         <div
           ref={carouselRef}
           className="flex gap-5 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
