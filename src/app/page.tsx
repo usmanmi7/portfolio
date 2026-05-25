@@ -695,7 +695,7 @@ function Services() {
           {SERVICES.map((service) => (
             <div
               key={service.number}
-              className="bento-card p-8 md:p-10 group relative overflow-hidden flex-shrink-0 w-[85vw] md:w-[34%] snap-start"
+              className="bento-card p-8 md:p-10 group relative overflow-hidden flex-shrink-0 w-[85vw] md:w-[34%] min-h-[420px] snap-start"
             >
               {/* Icon */}
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#ff6b35]/10 to-[#c084fc]/5 border border-white/[0.06] flex items-center justify-center mb-8 text-white/30 group-hover:text-[#ff6b35] group-hover:border-[#ff6b35]/20 transition-all duration-400">
