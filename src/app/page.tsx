@@ -324,7 +324,7 @@ function Hero() {
         </div>
 
         {/* Right side — Scrolling work photos */}
-        <div className="hidden lg:flex flex-1 items-stretch relative py-20">
+        <div className="hidden lg:flex flex-1 items-stretch relative py-20 z-[1]">
           {/* Column 1 — scrolls UP */}
           <div className="flex-1 relative mx-1.5">
             <div className="animate-scroll-up">
@@ -388,7 +388,7 @@ function Hero() {
       </div>
 
       {/* Bottom marquee */}
-      <div className="absolute bottom-0 left-0 right-0 border-t border-white/[0.04] py-4 overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 border-t border-white/[0.04] py-4 overflow-hidden z-[2]">
         <div className="animate-marquee whitespace-nowrap flex">
           {[...Array(2)].map((_, si) => (
             <span key={si} className="flex-shrink-0 flex items-center">
