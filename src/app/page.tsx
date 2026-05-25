@@ -87,6 +87,28 @@ const SERVICES = [
       </svg>
     ),
   },
+  {
+    number: "05",
+    title: "E-Commerce Solutions",
+    desc: "End-to-end online stores built for conversion. Shopify, WooCommerce, or custom platforms — seamless checkout, inventory management, and growth-ready.",
+    tags: ["Shopify", "WooCommerce", "Payments"],
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+      </svg>
+    ),
+  },
+  {
+    number: "06",
+    title: "Motion & Animation",
+    desc: "Engaging micro-interactions and page animations that bring interfaces to life. GSAP, Lottie, and CSS animations that enhance user experience without compromise.",
+    tags: ["GSAP", "Lottie", "CSS Anim"],
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" />
+      </svg>
+    ),
+  },
 ];
 
 const TECH_STACK = [
@@ -607,10 +629,19 @@ function Work() {
 }
 
 /* ═══════════════════════════════════════════
-   SERVICES — Icon Cards Grid
+   SERVICES — Horizontal Carousel
    ═══════════════════════════════════════════ */
 
 function Services() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (!scrollRef.current) return;
+    const cardWidth = scrollRef.current.offsetWidth * 0.34;
+    const scrollAmount = direction === "left" ? -cardWidth : cardWidth;
+    scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  };
+
   return (
     <section id="services" className="py-24 md:py-36 px-6 md:px-10 relative">
       {/* Background accent */}
@@ -618,20 +649,53 @@ function Services() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section header */}
-        <div className="flex items-center gap-4 mb-4">
-          <span className="text-xs font-mono text-[#ff6b35] tracking-widest uppercase">03</span>
-          <div className="w-12 h-px bg-white/10" />
-          <span className="text-xs tracking-[0.2em] text-white/30 uppercase">What I Do</span>
-        </div>
-        <h2 className="text-3xl md:text-5xl font-display font-700 mb-16 max-w-2xl">
-          Services &{" "}
-          <span className="gradient-text">expertise</span>
-        </h2>
+        <div className="flex items-center justify-between mb-16">
+          <div>
+            <div className="flex items-center gap-4 mb-4">
+              <span className="text-xs font-mono text-[#ff6b35] tracking-widest uppercase">03</span>
+              <div className="w-12 h-px bg-white/10" />
+              <span className="text-xs tracking-[0.2em] text-white/30 uppercase">What I Do</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-display font-700 max-w-2xl">
+              Services &{" "}
+              <span className="gradient-text">expertise</span>
+            </h2>
+          </div>
 
-        {/* 2x2 Icon card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {/* Carousel arrows */}
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={() => scroll("left")}
+              className="w-12 h-12 rounded-full border border-white/[0.08] bg-white/[0.02] flex items-center justify-center text-white/30 hover:text-white hover:border-white/20 hover:bg-white/[0.05] transition-all"
+              aria-label="Scroll left"
+            >
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M12 2L5 9L12 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              className="w-12 h-12 rounded-full border border-white/[0.08] bg-white/[0.02] flex items-center justify-center text-white/30 hover:text-white hover:border-white/20 hover:bg-white/[0.05] transition-all"
+              aria-label="Scroll right"
+            >
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M6 2L13 9L6 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Horizontal scrollable card row */}
+        <div
+          ref={scrollRef}
+          className="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 scrollbar-hide"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
           {SERVICES.map((service) => (
-            <div key={service.number} className="bento-card p-8 md:p-10 group relative overflow-hidden">
+            <div
+              key={service.number}
+              className="bento-card p-8 md:p-10 group relative overflow-hidden flex-shrink-0 w-[85vw] md:w-[34%] snap-start"
+            >
               {/* Icon */}
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#ff6b35]/10 to-[#c084fc]/5 border border-white/[0.06] flex items-center justify-center mb-8 text-white/30 group-hover:text-[#ff6b35] group-hover:border-[#ff6b35]/20 transition-all duration-400">
                 {service.icon}
