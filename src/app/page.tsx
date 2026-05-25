@@ -685,11 +685,10 @@ function Services() {
           </div>
         </div>
 
-        {/* Horizontal scrollable card row */}
+        {/* Horizontal scrollable card row — no overflow visible, carousel only */}
         <div
           ref={scrollRef}
-          className="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 scrollbar-hide"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          className="flex gap-5 overflow-hidden scroll-smooth"
         >
           {SERVICES.map((service) => (
             <div
