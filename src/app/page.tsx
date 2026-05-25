@@ -500,7 +500,7 @@ function About() {
               {/* Main portrait */}
               <div className="relative w-[280px] h-[370px] md:w-[320px] md:h-[420px] rounded-none overflow-hidden border border-white/[0.06] z-10">
                 <Image
-                  src="/portrait-2026.jpg"
+                  src="/about.jpg"
                   alt="Usman Milas portrait"
                   fill
                   className="object-cover object-top"
