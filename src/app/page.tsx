@@ -359,7 +359,7 @@ function Hero() {
               {[...Array(3)].map((_, setIdx) => (
                 <div key={`up-${setIdx}`}>
                   {PROJECTS.map((project, i) => (
-                    <div key={`up-${setIdx}-${i}`} className="relative aspect-[4/3] overflow-hidden mb-3">
+                    <div key={`up-${setIdx}-${i}`} className="relative aspect-video overflow-hidden mb-3">
                       <Image
                         src={project.image}
                         alt={project.title}
@@ -383,7 +383,7 @@ function Hero() {
               {[...Array(3)].map((_, setIdx) => (
                 <div key={`down-${setIdx}`}>
                   {[...PROJECTS].reverse().map((project, i) => (
-                    <div key={`down-${setIdx}-${i}`} className="relative aspect-[4/3] overflow-hidden mb-3">
+                    <div key={`down-${setIdx}-${i}`} className="relative aspect-video overflow-hidden mb-3">
                       <Image
                         src={project.image}
                         alt={project.title}
