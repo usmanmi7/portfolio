@@ -112,7 +112,7 @@ const SERVICES = [
 ];
 
 const TECH_STACK = [
-  "Webflow", "WordPress", "Wix", "Next.js", "React",
+  "HTML", "Webflow", "WordPress", "Wix", "Next.js", "React",
   "Tailwind CSS", "Figma", "GSAP", "Three.js", "Shopify",
 ];
 
@@ -404,15 +404,14 @@ function Hero() {
       </div>
     </section>
 
-    {/* Marquee — separate section below hero */}
-    <div className="border-t border-white/[0.04] py-4 overflow-hidden bg-[#050505]">
-      <div className="animate-marquee whitespace-nowrap flex">
+    {/* Marquee — company logos below hero */}
+    <div className="border-t border-white/[0.04] py-6 overflow-hidden bg-[#050505]">
+      <div className="animate-marquee whitespace-nowrap flex items-center">
         {[...Array(2)].map((_, si) => (
           <span key={si} className="flex-shrink-0 flex items-center">
-            {Array(8).fill(0).map((_, i) => (
-              <span key={`${si}-${i}`} className="flex items-center mx-4 md:mx-6">
-                <span className="text-lg md:text-2xl font-display font-600 text-white/[0.04]">Usman Milas</span>
-                <span className="text-[#ff6b35]/20 ml-4 md:ml-6 text-xs">◆</span>
+            {["Vercel", "Stripe", "Notion", "Linear", "Figma", "Supabase", "Resend", "Clerk", "Prisma", "Railway"].map((company, i) => (
+              <span key={`${si}-${i}`} className="inline-flex items-center mx-6 md:mx-10 text-lg md:text-xl font-display font-600 text-white/[0.07] hover:text-white/[0.15] transition-colors cursor-default select-none">
+                {company}
               </span>
             ))}
           </span>
@@ -472,7 +471,7 @@ function About() {
 
             {/* Mini skill tags */}
             <div className="flex flex-wrap gap-2 mb-10">
-              {["UI/UX Design", "Webflow", "WordPress", "Next.js", "React", "Figma", "GSAP"].map((skill) => (
+              {["UI/UX Designer", "Developer", "AI Tools Specialist", "Video Editor", "Social Media Handler", "Self Learner", "Video Coder"].map((skill) => (
                 <span key={skill} className="text-xs text-white/25 px-3.5 py-2 rounded-full bg-white/[0.02] border border-white/[0.05] hover:border-[#ff6b35]/20 hover:text-white/40 transition-all cursor-default">
                   {skill}
                 </span>
@@ -499,7 +498,7 @@ function About() {
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative">
               {/* Main portrait */}
-              <div className="relative w-[280px] h-[370px] md:w-[320px] md:h-[420px] rounded-2xl overflow-hidden border border-white/[0.06] z-10">
+              <div className="relative w-[280px] h-[370px] md:w-[320px] md:h-[420px] rounded-none overflow-hidden border border-white/[0.06] z-10">
                 <Image
                   src="/portrait-2026.jpg"
                   alt="Usman Milas portrait"
@@ -510,7 +509,7 @@ function About() {
               </div>
 
               {/* Offset decorative border */}
-              <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border border-[#ff6b35]/10 z-0" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full rounded-none border border-[#ff6b35]/10 z-0" />
 
               {/* Floating accent shapes */}
               <div className="absolute -top-6 -left-6 w-16 h-16 rounded-xl border border-[#ff6b35]/15 z-20 flex items-center justify-center">
