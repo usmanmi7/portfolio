@@ -326,7 +326,7 @@ function Hero() {
         {/* Right side — Scrolling work photos */}
         <div className="hidden lg:flex items-stretch relative py-20 z-[1] w-[40%]">
           {/* Column 1 — scrolls UP */}
-          <div className="flex-1 relative mx-1.5 overflow-hidden">
+          <div className="flex-1 relative mx-1.5">
             <div className="animate-scroll-up">
               {[...Array(3)].map((_, setIdx) => (
                 <div key={`up-${setIdx}`}>
@@ -347,15 +347,10 @@ function Hero() {
                 </div>
               ))}
             </div>
-            {/* Heavy top/bottom fade overlay */}
-            <div className="absolute inset-0 pointer-events-none z-10">
-              <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#050505] via-[#050505]/70 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-transparent" />
-            </div>
           </div>
 
           {/* Column 2 — scrolls DOWN */}
-          <div className="flex-1 relative mx-1.5 overflow-hidden">
+          <div className="flex-1 relative mx-1.5">
             <div className="animate-scroll-down">
               {[...Array(3)].map((_, setIdx) => (
                 <div key={`down-${setIdx}`}>
@@ -375,11 +370,6 @@ function Hero() {
                   ))}
                 </div>
               ))}
-            </div>
-            {/* Heavy top/bottom fade overlay */}
-            <div className="absolute inset-0 pointer-events-none z-10">
-              <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#050505] via-[#050505]/70 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050505] via-[#050505]/70 to-transparent" />
             </div>
           </div>
         </div>
