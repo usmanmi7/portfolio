@@ -324,7 +324,7 @@ function Hero() {
         </div>
 
         {/* Right side — Scrolling work photos */}
-        <div className="hidden lg:flex flex-1 items-stretch relative py-20 z-[1]">
+        <div className="hidden lg:flex items-stretch relative py-20 z-[1] w-[40%]">
           {/* Column 1 — scrolls UP */}
           <div className="flex-1 relative mx-1.5 overflow-hidden">
             <div className="animate-scroll-up">
