@@ -633,13 +633,33 @@ function Work() {
    ═══════════════════════════════════════════ */
 
 function Services() {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [cardWidth, setCardWidth] = useState(0);
+
+  useEffect(() => {
+    const updateCardWidth = () => {
+      if (carouselRef.current) {
+        const card = carouselRef.current.querySelector('[data-service-card]');
+        if (card) {
+          const style = window.getComputedStyle(carouselRef.current);
+          const gap = parseInt(style.gap) || 20;
+          setCardWidth(card.offsetWidth + gap);
+        }
+      }
+    };
+    updateCardWidth();
+    window.addEventListener('resize', updateCardWidth);
+    return () => window.removeEventListener('resize', updateCardWidth);
+  }, []);
+
+  const maxIndex = Math.max(0, SERVICES.length - 3); // show 3 at a time on desktop
 
   const scroll = (direction: "left" | "right") => {
-    if (!scrollRef.current) return;
-    const cardWidth = scrollRef.current.offsetWidth * 0.34;
-    const scrollAmount = direction === "left" ? -cardWidth : cardWidth;
-    scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    setActiveIndex((prev) => {
+      if (direction === "left") return Math.max(0, prev - 1);
+      return Math.min(maxIndex, prev + 1);
+    });
   };
 
   return (
@@ -686,16 +706,17 @@ function Services() {
         </div>
       </div>
 
-      {/* Cards row — full width with hero-matching padding, overflow visible for peek */}
-      <div className="pl-6 md:pl-10 relative z-10">
+      {/* Cards row — full width with hero-matching padding, transform-based carousel */}
+      <div className="pl-6 md:pl-10 relative z-10 overflow-hidden">
         <div
-          ref={scrollRef}
-          className="flex gap-5 overflow-hidden scroll-smooth"
+          ref={carouselRef}
+          className="flex gap-5 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
+          style={{ transform: `translateX(-${activeIndex * cardWidth}px)` }}
         >
           {SERVICES.map((service) => (
             <div
               key={service.number}
-              className="bento-card p-8 md:p-10 group relative overflow-hidden flex-shrink-0 w-[85vw] md:w-[34%] min-h-[420px] snap-start"
+              className="bento-card p-8 md:p-10 group relative overflow-hidden flex-shrink-0 w-[85vw] md:w-[34%] min-h-[420px] snap-start" data-service-card
             >
               {/* Icon */}
               <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#ff6b35]/10 to-[#c084fc]/5 border border-white/[0.06] flex items-center justify-center mb-8 text-white/30 group-hover:text-[#ff6b35] group-hover:border-[#ff6b35]/20 transition-all duration-400">
