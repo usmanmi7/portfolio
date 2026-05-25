@@ -251,6 +251,7 @@ function Nav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (v: bo
 
 function Hero() {
   return (
+  <>
     <section id="hero" className="relative flex items-stretch overflow-hidden" style={{ height: '100vh' }}>
       {/* Background */}
       <div className="absolute inset-0">
@@ -373,23 +374,25 @@ function Hero() {
             </div>
           </div>
         </div>
-        {/* Bottom marquee */}
-        <div className="absolute bottom-0 left-0 right-0 border-t border-white/[0.04] py-4 overflow-hidden z-[3]">
-          <div className="animate-marquee whitespace-nowrap flex">
-            {[...Array(2)].map((_, si) => (
-              <span key={si} className="flex-shrink-0 flex items-center">
-                {Array(8).fill(0).map((_, i) => (
-                  <span key={`${si}-${i}`} className="flex items-center mx-4 md:mx-6">
-                    <span className="text-lg md:text-2xl font-display font-600 text-white/[0.04]">Usman Milas</span>
-                    <span className="text-[#ff6b35]/20 ml-4 md:ml-6 text-xs">◆</span>
-                  </span>
-                ))}
-              </span>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
+
+    {/* Marquee — separate section below hero */}
+    <div className="border-t border-white/[0.04] py-4 overflow-hidden bg-[#050505]">
+      <div className="animate-marquee whitespace-nowrap flex">
+        {[...Array(2)].map((_, si) => (
+          <span key={si} className="flex-shrink-0 flex items-center">
+            {Array(8).fill(0).map((_, i) => (
+              <span key={`${si}-${i}`} className="flex items-center mx-4 md:mx-6">
+                <span className="text-lg md:text-2xl font-display font-600 text-white/[0.04]">Usman Milas</span>
+                <span className="text-[#ff6b35]/20 ml-4 md:ml-6 text-xs">◆</span>
+              </span>
+            ))}
+          </span>
+        ))}
+      </div>
+    </div>
+  </>
   );
 }
 
