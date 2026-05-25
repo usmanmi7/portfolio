@@ -324,9 +324,9 @@ function Hero() {
         </div>
 
         {/* Right side — Scrolling work photos */}
-        <div className="hidden lg:flex flex-1 items-stretch relative overflow-hidden py-20">
+        <div className="hidden lg:flex flex-1 items-stretch relative py-20">
           {/* Column 1 — scrolls UP */}
-          <div className="flex-1 relative overflow-hidden mx-1.5">
+          <div className="flex-1 relative mx-1.5">
             <div className="animate-scroll-up">
               {[...Array(3)].map((_, setIdx) => (
                 <div key={`up-${setIdx}`}>
@@ -352,7 +352,7 @@ function Hero() {
           </div>
 
           {/* Column 2 — scrolls DOWN */}
-          <div className="flex-1 relative overflow-hidden mx-1.5">
+          <div className="flex-1 relative mx-1.5">
             <div className="animate-scroll-down">
               {[...Array(3)].map((_, setIdx) => (
                 <div key={`down-${setIdx}`}>
