@@ -327,6 +327,10 @@ function Hero() {
 
         {/* Right side — Scrolling work photos */}
         <div className="hidden lg:flex items-stretch relative py-20 z-[1] w-[40%]">
+          {/* Half-round fade overlay on top */}
+          <div className="absolute top-0 left-0 right-0 h-[45%] z-[5] pointer-events-none" style={{ background: 'radial-gradient(ellipse 80% 100% at 50% 0%, #050505 0%, #050505d0 25%, #05050580 50%, transparent 100%)' }} />
+          {/* Bottom fade overlay */}
+          <div className="absolute bottom-0 left-0 right-0 h-[20%] z-[5] pointer-events-none" style={{ background: 'linear-gradient(to top, #050505, transparent)' }} />
           {/* Column 1 — scrolls UP */}
           <div className="flex-1 relative mx-1.5">
             <div className="animate-scroll-up">
