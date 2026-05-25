@@ -792,13 +792,11 @@ const DELIVERABLES = [
   { item: "Responsive Development", static: true, business: true, custom: true },
   { item: "SEO Optimization", static: true, business: true, custom: true },
   { item: "Fast Performance", static: true, business: true, custom: true },
-  { item: "Cross-Browser Testing", static: true, business: true, custom: true },
   { item: "Animations & Interactions", static: true, business: true, custom: true },
   { item: "Analytics Setup", static: false, business: true, custom: true },
   { item: "CMS / Admin Dashboard", static: false, business: true, custom: true },
   { item: "E-Commerce Integration", static: false, business: true, custom: true },
-  { item: "Post-Launch Support", static: false, business: true, custom: true },
-  { item: "Up to 5 Pages", static: true, business: false, custom: true },
+  { item: "Up to 5 Pages", static: true, business: true, custom: true },
   { item: "Up to 10 Pages", static: false, business: true, custom: true },
   { item: "Unlimited Pages", static: false, business: false, custom: true },
 ];
@@ -822,13 +820,15 @@ function Pricing() {
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full bg-[#c084fc]/[0.02] blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Section header */}
-        <div className="flex items-center gap-4 mb-4">
-          <span className="text-xs font-mono text-[#ff6b35] tracking-widest uppercase">04</span>
-          <div className="w-12 h-px bg-white/10" />
-          <span className="text-xs tracking-[0.2em] text-white/30 uppercase">Pricing</span>
+        {/* Section header — centered */}
+        <div className="text-center mb-4">
+          <div className="flex items-center justify-center gap-4">
+            <span className="text-xs font-mono text-[#ff6b35] tracking-widest uppercase">04</span>
+            <div className="w-12 h-px bg-white/10" />
+            <span className="text-xs tracking-[0.2em] text-white/30 uppercase">Pricing</span>
+          </div>
         </div>
-        <h2 className="text-3xl md:text-5xl font-display font-700 mb-16 max-w-2xl">
+        <h2 className="text-3xl md:text-5xl font-display font-700 mb-16 text-center">
           What you{" "}
           <span className="gradient-text">get</span>
         </h2>
