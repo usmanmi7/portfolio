@@ -166,9 +166,9 @@ function Nav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (v: bo
           scrolled ? "bg-[#050505]/80 backdrop-blur-xl border-b border-white/[0.04]" : ""
         }`}
       >
-        <div className="flex items-center justify-between px-6 md:px-10 py-4 md:py-5">
+        <div className="flex items-center px-6 md:px-10 py-4 md:py-5">
           {/* Logo */}
-          <a href="#hero" className="relative z-50 flex items-center gap-2.5">
+          <a href="#hero" className="relative z-50 flex items-center gap-2.5 flex-shrink-0">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#ff6b35] to-[#c084fc] flex items-center justify-center">
               <span className="text-[0.975rem] font-display font-800 text-white">U</span>
             </div>
@@ -177,8 +177,8 @@ function Nav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (v: bo
             </span>
           </a>
 
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop links — left aligned after logo */}
+          <div className="hidden md:flex items-center gap-8 ml-8">
             {["About", "Work", "Services", "Contact"].map((link) => (
               <a
                 key={link}
@@ -190,8 +190,11 @@ function Nav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (v: bo
             ))}
           </div>
 
+          {/* Spacer to push CTA right */}
+          <div className="flex-1" />
+
           {/* CTA + Hamburger */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 flex-shrink-0">
             <a
               href="#contact"
               className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[0.975rem] font-medium bg-white text-[#050505] hover:bg-white/90 transition-all"
