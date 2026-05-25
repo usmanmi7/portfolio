@@ -40,6 +40,14 @@ const PROJECTS = [
     desc: "Digital agency portfolio featuring creative transitions, 3D elements, and interactive storytelling.",
     tools: ["Webflow", "Three.js"],
   },
+  {
+    title: "Giros",
+    tag: "Creative",
+    year: "2025",
+    image: "/project-5.jpg",
+    desc: "Creative brand website with bold visuals, smooth interactions, and a modern design language.",
+    tools: ["Webflow", "GSAP"],
+  },
 ];
 
 const SERVICES = [
