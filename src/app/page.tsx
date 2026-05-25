@@ -643,12 +643,12 @@ function Services() {
   };
 
   return (
-    <section id="services" className="py-24 md:py-36 px-6 md:px-10 relative">
+    <section id="services" className="py-24 md:py-36 relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#ff6b35]/[0.02] blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Section header */}
+      {/* Section header — constrained width */}
+      <div className="px-6 md:px-10 max-w-7xl mx-auto relative z-10">
         <div className="flex items-center justify-between mb-16">
           <div>
             <div className="flex items-center gap-4 mb-4">
@@ -684,8 +684,10 @@ function Services() {
             </button>
           </div>
         </div>
+      </div>
 
-        {/* Horizontal scrollable card row — no overflow visible, carousel only */}
+      {/* Cards row — full width with hero-matching padding, overflow visible for peek */}
+      <div className="pl-6 md:pl-10 relative z-10">
         <div
           ref={scrollRef}
           className="flex gap-5 overflow-hidden scroll-smooth"
@@ -731,9 +733,11 @@ function Services() {
             </div>
           ))}
         </div>
+      </div>
 
-        {/* Tech stack marquee */}
-        <div className="mt-16 overflow-hidden py-4 border-y border-white/[0.04]">
+      {/* Tech stack marquee */}
+      <div className="px-6 md:px-10 max-w-7xl mx-auto mt-16 relative z-10">
+        <div className="overflow-hidden py-4 border-y border-white/[0.04]">
           <div className="animate-marquee whitespace-nowrap flex">
             {[...Array(2)].map((_, si) => (
               <span key={si} className="flex-shrink-0 flex items-center">
