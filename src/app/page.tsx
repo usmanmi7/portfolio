@@ -251,7 +251,7 @@ function Nav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (v: bo
 
 function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-stretch overflow-hidden">
+    <section id="hero" className="relative flex items-stretch overflow-hidden" style={{ height: '100vh' }}>
       {/* Background */}
       <div className="absolute inset-0">
         <Image src="/hero-2026.jpg" alt="" fill className="object-cover opacity-15" priority />
