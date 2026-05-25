@@ -170,7 +170,7 @@ function Nav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (v: bo
           {/* Logo */}
           <a href="#hero" className="relative z-50 flex items-center gap-2.5">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#ff6b35] to-[#c084fc] flex items-center justify-center">
-              <span className="text-sm font-display font-800 text-white">U</span>
+              <span className="text-[0.975rem] font-display font-800 text-white">U</span>
             </div>
             <span className="font-display font-700 text-lg tracking-tight hidden sm:block">
               Usman<span className="text-white/30">.</span>
@@ -183,7 +183,7 @@ function Nav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (v: bo
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
-                className="text-white/40 hover:text-white transition-colors duration-300 tracking-wide" style={{ fontSize: '0.975rem' }}
+                className="text-[0.975rem] text-white/40 hover:text-white transition-colors duration-300 tracking-wide"
               >
                 {link}
               </a>
@@ -194,7 +194,7 @@ function Nav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (v: bo
           <div className="flex items-center gap-4">
             <a
               href="#contact"
-              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium bg-white text-[#050505] hover:bg-white/90 transition-all" style={{ fontSize: '0.975rem' }}
+              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[0.975rem] font-medium bg-white text-[#050505] hover:bg-white/90 transition-all"
             >
               Let&apos;s Talk
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -272,7 +272,7 @@ function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff6b35] opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#ff6b35]" />
             </span>
-            <span className="text-sm text-white/50 tracking-wide">Available for freelance work</span>
+            <span className="text-[0.975rem] text-white/50 tracking-wide">Available for freelance work</span>
           </div>
 
           {/* Main heading */}
@@ -291,7 +291,7 @@ function Hero() {
           <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: "0.45s" }}>
             <a
               href="#work"
-              className="group inline-flex items-center gap-3 px-7 py-4 rounded-full bg-gradient-to-r from-[#ff6b35] to-[#ff8f5e] text-white text-sm font-medium hover:shadow-[0_0_40px_rgba(255,107,53,0.3)] transition-all duration-500"
+              className="group inline-flex items-center gap-3 px-7 py-4 rounded-full bg-gradient-to-r from-[#ff6b35] to-[#ff8f5e] text-white text-[0.975rem] font-medium hover:shadow-[0_0_40px_rgba(255,107,53,0.3)] transition-all duration-500"
             >
               View My Work
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="group-hover:translate-x-1 transition-transform">
@@ -300,7 +300,7 @@ function Hero() {
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-7 py-4 rounded-full text-sm font-medium border border-white/10 text-white/60 hover:text-white hover:border-white/20 transition-all"
+              className="inline-flex items-center gap-2 px-7 py-4 rounded-full text-[0.975rem] font-medium border border-white/10 text-white/60 hover:text-white hover:border-white/20 transition-all"
             >
               Get In Touch
             </a>
@@ -582,7 +582,7 @@ function Work() {
                   </div>
                   {/* View project link */}
                   <div className={`mt-6 ${!isEven ? "lg:text-right" : ""}`}>
-                    <span className="inline-flex items-center gap-2 text-sm text-white/30 group-hover:text-[#ff6b35] transition-colors cursor-pointer">
+                    <span className="inline-flex items-center gap-2 text-[0.975rem] text-white/30 group-hover:text-[#ff6b35] transition-colors cursor-pointer">
                       View Project
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="group-hover:translate-x-1 transition-transform">
                         <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -633,7 +633,7 @@ function Services() {
               <h3 className="text-xl md:text-2xl font-display font-700 mb-4 group-hover:text-[#ff6b35] transition-colors duration-300">
                 {service.title}
               </h3>
-              <p className="text-sm text-white/30 leading-relaxed mb-6">
+              <p className="text-[0.975rem] text-white/30 leading-relaxed mb-6">
                 {service.desc}
               </p>
 
@@ -647,7 +647,7 @@ function Services() {
               </div>
 
               {/* Bottom link */}
-              <div className="flex items-center gap-2 text-sm text-white/20 group-hover:text-[#ff6b35] transition-colors cursor-pointer">
+              <div className="flex items-center gap-2 text-[0.975rem] text-white/20 group-hover:text-[#ff6b35] transition-colors cursor-pointer">
                 Learn more
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="group-hover:translate-x-1 transition-transform">
                   <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -729,7 +729,7 @@ function Contact() {
                 </svg>
               </div>
               <h3 className="text-xl font-display font-700 mb-2">Message Sent!</h3>
-              <p className="text-sm text-white/30">I&apos;ll get back to you within 24 hours.</p>
+              <p className="text-[0.975rem] text-white/30">I&apos;ll get back to you within 24 hours.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
@@ -767,7 +767,7 @@ function Contact() {
               </div>
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-[#ff6b35] to-[#ff8f5e] text-white font-display font-600 text-sm tracking-wide hover:shadow-[0_0_40px_rgba(255,107,53,0.25)] transition-all duration-500"
+                className="w-full py-4 rounded-xl bg-gradient-to-r from-[#ff6b35] to-[#ff8f5e] text-white font-display font-600 text-[0.975rem] tracking-wide hover:shadow-[0_0_40px_rgba(255,107,53,0.25)] transition-all duration-500"
               >
                 Send Message
               </button>
@@ -827,14 +827,14 @@ function Footer() {
       <div className="px-6 md:px-10 py-16 md:py-24">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
           <div>
-            <p className="text-sm text-white/20 uppercase tracking-widest mb-3">Ready to start?</p>
+            <p className="text-[0.975rem] text-white/20 uppercase tracking-widest mb-3">Ready to start?</p>
             <h3 className="text-3xl md:text-4xl font-display font-700">
               Let&apos;s work <span className="gradient-text">together</span>
             </h3>
           </div>
           <a
             href="#contact"
-            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#ff6b35] to-[#ff8f5e] text-white text-sm font-medium hover:shadow-[0_0_40px_rgba(255,107,53,0.3)] transition-all duration-500"
+            className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#ff6b35] to-[#ff8f5e] text-white text-[0.975rem] font-medium hover:shadow-[0_0_40px_rgba(255,107,53,0.3)] transition-all duration-500"
           >
             Start a Project
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="group-hover:translate-x-1 transition-transform">
@@ -854,7 +854,7 @@ function Footer() {
             <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#ff6b35] to-[#c084fc] flex items-center justify-center">
               <span className="text-[10px] font-display font-800 text-white">U</span>
             </div>
-            <span className="text-sm text-white/20">
+            <span className="text-[0.975rem] text-white/20">
               &copy; {new Date().getFullYear()} Usman Milas
             </span>
           </div>
