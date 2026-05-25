@@ -255,7 +255,7 @@ function Hero() {
       {/* Background */}
       <div className="absolute inset-0">
         <Image src="/hero-2026.jpg" alt="" fill className="object-cover opacity-15" priority />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/90 to-[#050505]/70" />
+        <div className="absolute inset-0 bg-[#050505]/85" />
       </div>
 
       {/* Decorative gradient orbs */}
