@@ -325,7 +325,7 @@ function Hero() {
 
         {/* Right side — Portrait (SMALLER) */}
         <div className="hidden lg:flex flex-1 items-center justify-center relative">
-          <div className="relative w-[280px] h-[360px] xl:w-[320px] xl:h-[420px] mr-8">
+          <div className="relative w-[322px] h-[414px] xl:w-[368px] xl:h-[483px] mr-8">
             <div className="absolute inset-0 rounded-2xl overflow-hidden border border-white/[0.06]">
               <Image
                 src="/portrait-2026.jpg"
