@@ -277,11 +277,9 @@ function Hero() {
 
           {/* Main heading */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] xl:text-[6rem] font-display font-800 leading-[0.92] tracking-tight mb-8 animate-fade-in-up" style={{ animationDelay: "0.15s" }}>
-            Crafting
+            Crafting <span className="gradient-text">digital</span>
             <br />
-            <span className="gradient-text">digital</span> experiences
-            <br />
-            that <span className="italic font-500 text-white/60">matter</span>
+            experiences that <span className="italic font-500 text-white/60">matter</span>
           </h1>
 
           {/* Subline */}
