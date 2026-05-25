@@ -401,8 +401,16 @@ function Hero() {
 function About() {
   return (
     <section id="about" className="py-24 md:py-36 px-6 md:px-10 relative overflow-hidden">
-      {/* Subtle background accent */}
-      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] rounded-full bg-[#c084fc]/[0.02] blur-[100px] pointer-events-none -translate-y-1/2" />
+      {/* Decorative background elements */}
+      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-[#ff6b35]/[0.02] blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#c084fc]/[0.02] blur-[100px] pointer-events-none" />
+
+      {/* Decorative grid dots */}
+      <div className="absolute top-20 right-20 hidden lg:grid grid-cols-5 gap-3 opacity-[0.03]">
+        {Array(25).fill(0).map((_, i) => (
+          <div key={i} className="w-1.5 h-1.5 rounded-full bg-white" />
+        ))}
+      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section header */}
@@ -416,52 +424,90 @@ function About() {
           <span className="gradient-text">who I am</span>
         </h2>
 
-        {/* Content: big quote + portrait float */}
-        <div className="relative">
-          {/* Large quote text */}
-          <div className="max-w-4xl">
-            <span className="text-[#ff6b35]/20 text-6xl md:text-8xl font-display font-800 leading-none select-none block mb-[-20px]">&ldquo;</span>
-            <p className="text-2xl md:text-3xl lg:text-4xl font-display font-600 leading-snug text-white/80 mb-8">
+        {/* Two-column layout: text left, photo right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left — Text content */}
+          <div className="lg:col-span-7">
+            {/* Accent quote mark */}
+            <span className="text-[#ff6b35]/15 text-7xl md:text-9xl font-display font-800 leading-none select-none block mb-[-30px]">&ldquo;</span>
+
+            <p className="text-2xl md:text-3xl lg:text-[2rem] font-display font-600 leading-snug text-white/80 mb-8">
               I craft modern, responsive, and user-focused digital experiences that help brands stand out.
             </p>
-            <p className="text-lg md:text-xl text-white/40 leading-relaxed max-w-2xl mb-10">
+
+            <p className="text-base md:text-lg text-white/40 leading-relaxed mb-8 max-w-xl">
               With over 4 years of hands-on experience and currently pursuing an HND in IT, the combination of my passion for <span className="text-white font-medium">design</span>,{" "}
               <span className="text-white font-medium">code</span> &{" "}
               <span className="text-white font-medium">interaction</span> positions me in a unique place in the web design world. Together we will set the new status quo — no nonsense, always on the cutting edge.
             </p>
+
+            {/* Mini skill tags */}
+            <div className="flex flex-wrap gap-2 mb-10">
+              {["UI/UX Design", "Webflow", "WordPress", "Next.js", "React", "Figma", "GSAP"].map((skill) => (
+                <span key={skill} className="text-xs text-white/25 px-3.5 py-2 rounded-full bg-white/[0.02] border border-white/[0.05] hover:border-[#ff6b35]/20 hover:text-white/40 transition-all cursor-default">
+                  {skill}
+                </span>
+              ))}
+            </div>
+
+            {/* Stats bar */}
+            <div className="pt-8 border-t border-white/[0.06] grid grid-cols-4 gap-6">
+              {[
+                { value: "4+", label: "Years Exp" },
+                { value: "50+", label: "Projects" },
+                { value: "30+", label: "Clients" },
+                { value: "10+", label: "Tools" },
+              ].map((stat, i) => (
+                <div key={stat.label} className="flex flex-col">
+                  <span className="text-2xl md:text-3xl font-display font-800 gradient-text mb-1">{stat.value}</span>
+                  <span className="text-[10px] text-white/20 uppercase tracking-widest">{stat.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Floating portrait — positioned to the right */}
-          <div className="lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 mt-8 lg:mt-0">
-            <div className="relative w-full max-w-xs lg:max-w-[280px] mx-auto lg:mx-0">
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden border border-white/[0.06]">
+          {/* Right — Portrait with graphical decorations */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative">
+              {/* Main portrait */}
+              <div className="relative w-[280px] h-[370px] md:w-[320px] md:h-[420px] rounded-2xl overflow-hidden border border-white/[0.06] z-10">
                 <Image
                   src="/portrait-2026.jpg"
                   alt="Usman Milas portrait"
                   fill
                   className="object-cover object-top"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/50 to-transparent" />
               </div>
-              {/* Decorative border offset */}
-              <div className="absolute -bottom-3 -right-3 w-full h-full rounded-2xl border border-[#ff6b35]/10 -z-10" />
+
+              {/* Offset decorative border */}
+              <div className="absolute -bottom-4 -right-4 w-full h-full rounded-2xl border border-[#ff6b35]/10 z-0" />
+
+              {/* Floating accent shapes */}
+              <div className="absolute -top-6 -left-6 w-16 h-16 rounded-xl border border-[#ff6b35]/15 z-20 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#ff6b35] to-[#c084fc] flex items-center justify-center">
+                  <span className="text-xs font-display font-800 text-white">U</span>
+                </div>
+              </div>
+
+              {/* Floating status badge */}
+              <div className="absolute -bottom-3 -left-8 z-20 glass-card rounded-xl px-4 py-3 flex items-center gap-2.5">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+                </span>
+                <span className="text-xs text-white/50">Available for work</span>
+              </div>
+
+              {/* Decorative circle */}
+              <div className="absolute -top-10 right-[-20px] w-24 h-24 rounded-full border border-white/[0.03] z-0" />
+              <div className="absolute -bottom-8 -right-12 w-16 h-16 rounded-full border border-[#c084fc]/10 z-0" />
+
+              {/* Corner accent lines */}
+              <div className="absolute top-4 -right-8 w-8 h-px bg-gradient-to-r from-white/[0.06] to-transparent" />
+              <div className="absolute top-4 -right-8 h-8 w-px bg-gradient-to-b from-white/[0.06] to-transparent" />
             </div>
           </div>
-        </div>
-
-        {/* Stats bar — horizontal line */}
-        <div className="mt-16 pt-10 border-t border-white/[0.06] grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { value: "4+", label: "Years Experience" },
-            { value: "50+", label: "Projects Delivered" },
-            { value: "30+", label: "Happy Clients" },
-            { value: "10+", label: "Tech Tools" },
-          ].map((stat, i) => (
-            <div key={stat.label} className="flex flex-col">
-              <span className="text-3xl md:text-4xl font-display font-800 gradient-text mb-2">{stat.value}</span>
-              <span className="text-xs text-white/25 uppercase tracking-widest">{stat.label}</span>
-            </div>
-          ))}
         </div>
       </div>
     </section>
