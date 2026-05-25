@@ -323,31 +323,66 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right side — Portrait (SMALLER) */}
-        <div className="hidden lg:flex flex-1 items-center justify-center relative">
-          <div className="relative w-[322px] h-[414px] xl:w-[368px] xl:h-[483px] mr-8">
-            <div className="absolute inset-0 rounded-2xl overflow-hidden border border-white/[0.06]">
-              <Image
-                src="/portrait-2026.jpg"
-                alt="Usman Milas portrait"
-                fill
-                className="object-cover object-top"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/10 to-transparent" />
-            </div>
-            {/* Floating label on portrait */}
-            <div className="absolute -bottom-4 -left-6 z-10">
-              <div className="glass-card rounded-xl px-5 py-3.5 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#ff6b35] to-[#c084fc] flex items-center justify-center flex-shrink-0">
-                  <span className="text-[10px] font-display font-800 text-white">U</span>
+        {/* Right side — Scrolling work photos */}
+        <div className="hidden lg:flex flex-1 items-stretch relative overflow-hidden py-20">
+          {/* Column 1 — scrolls UP */}
+          <div className="flex-1 relative overflow-hidden mx-1.5">
+            <div className="animate-scroll-up">
+              {[...Array(3)].map((_, setIdx) => (
+                <div key={`up-${setIdx}`}>
+                  {PROJECTS.map((project, i) => (
+                    <div key={`up-${setIdx}-${i}`} className="relative aspect-[4/3] rounded-xl overflow-hidden mb-3 border border-white/[0.04]">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                      />
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-[#050505]/30 to-[#050505]/10" />
+                      <div className="absolute inset-0 bg-[#ff6b35]/[0.03]" />
+                      <div className="absolute bottom-3 left-3 right-3">
+                        <p className="text-xs font-display font-600 text-white/50">{project.title}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div>
-                  <h3 className="text-sm font-display font-700 leading-tight">Usman Milas</h3>
-                  <p className="text-[10px] text-white/40">Designer & Developer</p>
-                </div>
-              </div>
+              ))}
             </div>
+          </div>
+
+          {/* Column 2 — scrolls DOWN */}
+          <div className="flex-1 relative overflow-hidden mx-1.5">
+            <div className="animate-scroll-down">
+              {[...Array(3)].map((_, setIdx) => (
+                <div key={`down-${setIdx}`}>
+                  {[...PROJECTS].reverse().map((project, i) => (
+                    <div key={`down-${setIdx}-${i}`} className="relative aspect-[4/3] rounded-xl overflow-hidden mb-3 border border-white/[0.04]">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                      />
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-[#050505]/30 to-[#050505]/10" />
+                      <div className="absolute inset-0 bg-[#c084fc]/[0.03]" />
+                      <div className="absolute bottom-3 left-3 right-3">
+                        <p className="text-xs font-display font-600 text-white/50">{project.title}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Edge fade overlays for smooth look */}
+          <div className="absolute inset-0 pointer-events-none z-10">
+            <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-[#050505] to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#050505] to-transparent" />
+            <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#050505] to-transparent" />
+            <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#050505] to-transparent" />
           </div>
         </div>
       </div>

@@ -118,6 +118,19 @@
 .animate-marquee { animation: marquee 40s linear infinite; }
 .animate-marquee:hover { animation-play-state: paused; }
 
+/* Vertical scroll animations for hero work photos */
+@keyframes scrollUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-33.333%); }
+}
+.animate-scroll-up { animation: scrollUp 30s linear infinite; }
+
+@keyframes scrollDown {
+  0% { transform: translateY(-33.333%); }
+  100% { transform: translateY(0); }
+}
+.animate-scroll-down { animation: scrollDown 30s linear infinite; }
+
 @keyframes pulse-glow {
   0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.1); }
   50% { box-shadow: 0 0 40px rgba(255, 107, 53, 0.2); }
