@@ -784,6 +784,172 @@ function Services() {
 }
 
 /* ═══════════════════════════════════════════
+   PRICING — What You Get + Plans
+   ═══════════════════════════════════════════ */
+
+const DELIVERABLES = [
+  { item: "Custom Design", static: true, business: true },
+  { item: "Responsive Development", static: true, business: true },
+  { item: "SEO Optimization", static: true, business: true },
+  { item: "Fast Performance", static: true, business: true },
+  { item: "Cross-Browser Testing", static: true, business: true },
+  { item: "Animations & Interactions", static: true, business: true },
+  { item: "Analytics Setup", static: false, business: true },
+  { item: "CMS / Admin Dashboard", static: false, business: true },
+  { item: "E-Commerce Integration", static: false, business: true },
+  { item: "Post-Launch Support", static: false, business: true },
+];
+
+function Pricing() {
+  return (
+    <section id="pricing" className="py-24 md:py-36 px-6 md:px-10 relative">
+      {/* Background accent */}
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full bg-[#c084fc]/[0.02] blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section header */}
+        <div className="flex items-center gap-4 mb-4">
+          <span className="text-xs font-mono text-[#ff6b35] tracking-widest uppercase">04</span>
+          <div className="w-12 h-px bg-white/10" />
+          <span className="text-xs tracking-[0.2em] text-white/30 uppercase">Pricing</span>
+        </div>
+        <h2 className="text-3xl md:text-5xl font-display font-700 mb-16 max-w-2xl">
+          What you{" "}
+          <span className="gradient-text">get</span>
+        </h2>
+
+        {/* Clean bordered comparison table */}
+        <div className="border border-white/[0.06] rounded-2xl overflow-hidden mb-16">
+          {/* Table header */}
+          <div className="grid grid-cols-3 border-b border-white/[0.06]">
+            <div className="px-6 md:px-8 py-5">
+              <span className="text-[0.975rem] text-white/30 uppercase tracking-widest">Deliverable</span>
+            </div>
+            <div className="px-6 md:px-8 py-5 text-center border-l border-white/[0.06]">
+              <span className="text-[0.975rem] text-white/40 uppercase tracking-widest">Static</span>
+            </div>
+            <div className="px-6 md:px-8 py-5 text-center border-l border-white/[0.06]">
+              <span className="text-[0.975rem] text-[#ff6b35]/70 uppercase tracking-widest">Business</span>
+            </div>
+          </div>
+
+          {/* Table rows */}
+          {DELIVERABLES.map((row, i) => (
+            <div
+              key={row.item}
+              className={`grid grid-cols-3 ${i < DELIVERABLES.length - 1 ? "border-b border-white/[0.04]" : ""} hover:bg-white/[0.01] transition-colors`}
+            >
+              <div className="px-6 md:px-8 py-4">
+                <span className="text-[0.975rem] text-white/50">{row.item}</span>
+              </div>
+              <div className="px-6 md:px-8 py-4 flex items-center justify-center border-l border-white/[0.04]">
+                {row.static ? (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                ) : (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2" strokeLinecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                )}
+              </div>
+              <div className="px-6 md:px-8 py-4 flex items-center justify-center border-l border-white/[0.04]">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Pricing cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Static Plan */}
+          <div className="bento-card p-8 md:p-10 relative">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-xs font-mono text-white/20 tracking-widest uppercase">Plan A</span>
+              <div className="w-8 h-px bg-white/10" />
+            </div>
+            <h3 className="text-2xl md:text-3xl font-display font-700 mb-2">Static Website</h3>
+            <p className="text-[0.975rem] text-white/30 mb-8">Clean, fast, and responsive — perfect for portfolios, landing pages, and small businesses.</p>
+
+            <div className="flex items-end gap-2 mb-8">
+              <span className="text-5xl md:text-6xl font-display font-800 gradient-text">$150</span>
+              <span className="text-[0.975rem] text-white/20 mb-2">/ project</span>
+            </div>
+
+            <div className="space-y-3 mb-8">
+              {["Up to 5 pages", "Custom responsive design", "SEO optimization", "Fast performance", "Animations & interactions", "Cross-browser tested"].map((feature) => (
+                <div key={feature} className="flex items-center gap-3">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span className="text-[0.975rem] text-white/40">{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-[0.975rem] font-medium border border-white/10 text-white/60 hover:text-white hover:border-white/20 transition-all"
+            >
+              Get Started
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          </div>
+
+          {/* Business Plan */}
+          <div className="bento-card p-8 md:p-10 relative border-[#ff6b35]/15">
+            {/* Popular badge */}
+            <div className="absolute top-6 right-6">
+              <span className="text-[10px] font-medium text-[#ff6b35] px-3 py-1.5 rounded-full bg-[#ff6b35]/10 border border-[#ff6b35]/20 uppercase tracking-widest">Popular</span>
+            </div>
+
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-xs font-mono text-[#ff6b35]/50 tracking-widest uppercase">Plan B</span>
+              <div className="w-8 h-px bg-[#ff6b35]/20" />
+            </div>
+            <h3 className="text-2xl md:text-3xl font-display font-700 mb-2">Business Website</h3>
+            <p className="text-[0.975rem] text-white/30 mb-8">Full-featured with dashboard, CMS control, and everything you need to scale your business online.</p>
+
+            <div className="flex items-end gap-2 mb-8">
+              <span className="text-5xl md:text-6xl font-display font-800 gradient-text">$300</span>
+              <span className="text-[0.975rem] text-white/20 mb-2">/ project</span>
+            </div>
+
+            <div className="space-y-3 mb-8">
+              {["Up to 10 pages", "Custom responsive design", "SEO optimization", "Fast performance", "Animations & interactions", "Admin dashboard & CMS", "E-commerce integration", "Analytics setup", "Post-launch support"].map((feature) => (
+                <div key={feature} className="flex items-center gap-3">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span className="text-[0.975rem] text-white/40">{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-[0.975rem] font-medium bg-gradient-to-r from-[#ff6b35] to-[#ff8f5e] text-white hover:shadow-[0_0_40px_rgba(255,107,53,0.3)] transition-all duration-500"
+            >
+              Get Started
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+
+            {/* Subtle glow */}
+            <div className="absolute -bottom-20 -right-20 w-40 h-40 rounded-full bg-[#ff6b35]/[0.05] blur-[80px] pointer-events-none" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════
    CONTACT — Full-width centered form
    ═══════════════════════════════════════════ */
 
@@ -807,7 +973,7 @@ function Contact() {
         {/* Big heading centered */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-4 mb-4">
-            <span className="text-xs font-mono text-[#ff6b35] tracking-widest uppercase">04</span>
+            <span className="text-xs font-mono text-[#ff6b35] tracking-widest uppercase">05</span>
             <div className="w-12 h-px bg-white/10" />
             <span className="text-xs tracking-[0.2em] text-white/30 uppercase">Contact</span>
           </div>
@@ -1005,6 +1171,7 @@ export default function HomePage() {
           <Hero />
           <About />
           <Services />
+          <Pricing />
           <Contact />
           <Footer />
         </main>
