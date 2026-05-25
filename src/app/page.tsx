@@ -183,7 +183,7 @@ function Nav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (v: bo
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
-                className="text-sm text-white/40 hover:text-white transition-colors duration-300 tracking-wide"
+                className="text-[0.975rem] text-white/40 hover:text-white transition-colors duration-300 tracking-wide"
               >
                 {link}
               </a>
@@ -194,7 +194,7 @@ function Nav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (v: bo
           <div className="flex items-center gap-4">
             <a
               href="#contact"
-              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium bg-white text-[#050505] hover:bg-white/90 transition-all"
+              className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[0.975rem] font-medium bg-white text-[#050505] hover:bg-white/90 transition-all"
             >
               Let&apos;s Talk
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
