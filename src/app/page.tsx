@@ -788,19 +788,32 @@ function Services() {
    ═══════════════════════════════════════════ */
 
 const DELIVERABLES = [
-  { item: "Custom Design", static: true, business: true },
-  { item: "Responsive Development", static: true, business: true },
-  { item: "SEO Optimization", static: true, business: true },
-  { item: "Fast Performance", static: true, business: true },
-  { item: "Cross-Browser Testing", static: true, business: true },
-  { item: "Animations & Interactions", static: true, business: true },
-  { item: "Analytics Setup", static: false, business: true },
-  { item: "CMS / Admin Dashboard", static: false, business: true },
-  { item: "E-Commerce Integration", static: false, business: true },
-  { item: "Post-Launch Support", static: false, business: true },
-  { item: "Up to 5 Pages", static: true, business: false },
-  { item: "Up to 10 Pages", static: false, business: true },
+  { item: "Custom Design", static: true, business: true, custom: true },
+  { item: "Responsive Development", static: true, business: true, custom: true },
+  { item: "SEO Optimization", static: true, business: true, custom: true },
+  { item: "Fast Performance", static: true, business: true, custom: true },
+  { item: "Cross-Browser Testing", static: true, business: true, custom: true },
+  { item: "Animations & Interactions", static: true, business: true, custom: true },
+  { item: "Analytics Setup", static: false, business: true, custom: true },
+  { item: "CMS / Admin Dashboard", static: false, business: true, custom: true },
+  { item: "E-Commerce Integration", static: false, business: true, custom: true },
+  { item: "Post-Launch Support", static: false, business: true, custom: true },
+  { item: "Up to 5 Pages", static: true, business: false, custom: true },
+  { item: "Up to 10 Pages", static: false, business: true, custom: true },
+  { item: "Unlimited Pages", static: false, business: false, custom: true },
 ];
+
+const CheckIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+);
+
+const CrossIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="2" strokeLinecap="round">
+    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+);
 
 function Pricing() {
   return (
@@ -820,25 +833,24 @@ function Pricing() {
           <span className="gradient-text">get</span>
         </h2>
 
-        {/* Clean bordered comparison table with pricing */}
+        {/* Clean bordered comparison table */}
         <div className="border border-white/[0.06] rounded-2xl overflow-hidden">
-          {/* Table header with plan names & prices */}
-          <div className="grid grid-cols-3 border-b border-white/[0.06]">
-            <div className="px-6 md:px-8 py-6">
+          {/* Table header — plan names only */}
+          <div className="grid grid-cols-4 border-b border-white/[0.06]">
+            <div className="px-6 md:px-8 py-5">
               <span className="text-[0.975rem] text-white/30 uppercase tracking-widest">Deliverable</span>
             </div>
-            <div className="px-6 md:px-8 py-6 text-center border-l border-white/[0.06]">
-              <div className="text-[0.975rem] text-white/50 uppercase tracking-widest mb-1">Static</div>
-              <div className="text-3xl md:text-4xl font-display font-800 text-white/80">$150</div>
-              <div className="text-xs text-white/20 mt-1">5 pages / project</div>
+            <div className="px-6 md:px-8 py-5 text-center border-l border-white/[0.06]">
+              <div className="text-[0.975rem] text-white/40 uppercase tracking-widest">Static</div>
             </div>
-            <div className="px-6 md:px-8 py-6 text-center border-l border-white/[0.06] bg-white/[0.01]">
-              <div className="flex items-center justify-center gap-2 mb-1">
+            <div className="px-6 md:px-8 py-5 text-center border-l border-white/[0.06] bg-white/[0.01]">
+              <div className="flex items-center justify-center gap-2">
                 <span className="text-[0.975rem] text-[#ff6b35]/80 uppercase tracking-widest">Business</span>
                 <span className="text-[9px] font-medium text-[#ff6b35] px-2 py-0.5 rounded-full bg-[#ff6b35]/10 border border-[#ff6b35]/20 uppercase tracking-widest">Popular</span>
               </div>
-              <div className="text-3xl md:text-4xl font-display font-800 gradient-text">$300</div>
-              <div className="text-xs text-white/20 mt-1">10 pages / project</div>
+            </div>
+            <div className="px-6 md:px-8 py-5 text-center border-l border-white/[0.06]">
+              <div className="text-[0.975rem] text-white/40 uppercase tracking-widest">Custom</div>
             </div>
           </div>
 
@@ -846,61 +858,63 @@ function Pricing() {
           {DELIVERABLES.map((row, i) => (
             <div
               key={row.item}
-              className={`grid grid-cols-3 ${i < DELIVERABLES.length - 1 ? "border-b border-white/[0.04]" : ""} hover:bg-white/[0.01] transition-colors`}
+              className={`grid grid-cols-4 ${i < DELIVERABLES.length - 1 ? "border-b border-white/[0.04]" : ""} hover:bg-white/[0.01] transition-colors`}
             >
               <div className="px-6 md:px-8 py-4">
                 <span className="text-[0.975rem] text-white/50">{row.item}</span>
               </div>
               <div className="px-6 md:px-8 py-4 flex items-center justify-center border-l border-white/[0.04]">
-                {row.static ? (
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                ) : (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2" strokeLinecap="round">
-                    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                )}
+                {row.static ? <CheckIcon /> : <CrossIcon />}
               </div>
               <div className="px-6 md:px-8 py-4 flex items-center justify-center border-l border-white/[0.04] bg-white/[0.005]">
-                {row.business ? (
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                ) : (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2" strokeLinecap="round">
-                    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                )}
+                {row.business ? <CheckIcon /> : <CrossIcon />}
+              </div>
+              <div className="px-6 md:px-8 py-4 flex items-center justify-center border-l border-white/[0.04]">
+                {row.custom ? <CheckIcon /> : <CrossIcon />}
               </div>
             </div>
           ))}
 
-          {/* Table footer with CTA */}
-          <div className="grid grid-cols-3 border-t border-white/[0.06]">
+          {/* Table footer with prices and CTA */}
+          <div className="grid grid-cols-4 border-t border-white/[0.06]">
             <div className="px-6 md:px-8 py-6">
-              <span className="text-[0.975rem] text-white/20">Ready to start?</span>
+              <span className="text-[0.975rem] text-white/20">Price</span>
+            </div>
+            <div className="px-6 md:px-8 py-6 text-center border-l border-white/[0.06]">
+              <div className="text-2xl md:text-3xl font-display font-800 text-white/70">$150</div>
+              <div className="text-xs text-white/20 mt-1">5 pages / project</div>
+            </div>
+            <div className="px-6 md:px-8 py-6 text-center border-l border-white/[0.06] bg-white/[0.01]">
+              <div className="text-2xl md:text-3xl font-display font-800 gradient-text">$300</div>
+              <div className="text-xs text-white/20 mt-1">10 pages / project</div>
+            </div>
+            <div className="px-6 md:px-8 py-6 text-center border-l border-white/[0.06]">
+              <div className="text-[0.975rem] text-white/30">Negotiable</div>
+              <div className="text-xs text-white/15 mt-1">All options available</div>
+            </div>
+          </div>
+
+          {/* CTA row */}
+          <div className="grid grid-cols-4 border-t border-white/[0.06]">
+            <div className="px-6 md:px-8 py-6">
+              <span className="text-[0.975rem] text-white/20">Ready?</span>
             </div>
             <div className="px-6 md:px-8 py-6 flex items-center justify-center border-l border-white/[0.06]">
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[0.975rem] font-medium border border-white/10 text-white/50 hover:text-white hover:border-white/20 transition-all"
-              >
+              <a href="#contact" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[0.975rem] font-medium border border-white/10 text-white/50 hover:text-white hover:border-white/20 transition-all">
                 Get Started
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>
             </div>
             <div className="px-6 md:px-8 py-6 flex items-center justify-center border-l border-white/[0.06] bg-white/[0.01]">
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[0.975rem] font-medium bg-gradient-to-r from-[#ff6b35] to-[#ff8f5e] text-white hover:shadow-[0_0_30px_rgba(255,107,53,0.25)] transition-all duration-500"
-              >
+              <a href="#contact" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[0.975rem] font-medium bg-gradient-to-r from-[#ff6b35] to-[#ff8f5e] text-white hover:shadow-[0_0_30px_rgba(255,107,53,0.25)] transition-all duration-500">
                 Get Started
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </a>
+            </div>
+            <div className="px-6 md:px-8 py-6 flex items-center justify-center border-l border-white/[0.06]">
+              <a href="#contact" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[0.975rem] font-medium border border-[#ff6b35]/20 text-[#ff6b35]/60 hover:text-[#ff6b35] hover:border-[#ff6b35]/30 transition-all">
+                Contact Us
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>
             </div>
           </div>
