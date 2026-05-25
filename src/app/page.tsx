@@ -798,7 +798,7 @@ const DELIVERABLES = [
   { item: "E-Commerce Integration", static: false, business: true, custom: true },
   { item: "Up to 5 Pages", static: true, business: true, custom: true },
   { item: "Up to 10 Pages", static: false, business: true, custom: true },
-  { item: "Unlimited Pages", static: false, business: false, custom: true },
+  { item: "Custom Page Sizes", static: false, business: false, custom: true },
 ];
 
 const CheckIcon = () => (
