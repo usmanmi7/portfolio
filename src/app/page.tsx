@@ -798,6 +798,8 @@ const DELIVERABLES = [
   { item: "CMS / Admin Dashboard", static: false, business: true },
   { item: "E-Commerce Integration", static: false, business: true },
   { item: "Post-Launch Support", static: false, business: true },
+  { item: "Up to 5 Pages", static: true, business: false },
+  { item: "Up to 10 Pages", static: false, business: true },
 ];
 
 function Pricing() {
@@ -818,18 +820,25 @@ function Pricing() {
           <span className="gradient-text">get</span>
         </h2>
 
-        {/* Clean bordered comparison table */}
-        <div className="border border-white/[0.06] rounded-2xl overflow-hidden mb-16">
-          {/* Table header */}
+        {/* Clean bordered comparison table with pricing */}
+        <div className="border border-white/[0.06] rounded-2xl overflow-hidden">
+          {/* Table header with plan names & prices */}
           <div className="grid grid-cols-3 border-b border-white/[0.06]">
-            <div className="px-6 md:px-8 py-5">
+            <div className="px-6 md:px-8 py-6">
               <span className="text-[0.975rem] text-white/30 uppercase tracking-widest">Deliverable</span>
             </div>
-            <div className="px-6 md:px-8 py-5 text-center border-l border-white/[0.06]">
-              <span className="text-[0.975rem] text-white/40 uppercase tracking-widest">Static</span>
+            <div className="px-6 md:px-8 py-6 text-center border-l border-white/[0.06]">
+              <div className="text-[0.975rem] text-white/50 uppercase tracking-widest mb-1">Static</div>
+              <div className="text-3xl md:text-4xl font-display font-800 text-white/80">$150</div>
+              <div className="text-xs text-white/20 mt-1">5 pages / project</div>
             </div>
-            <div className="px-6 md:px-8 py-5 text-center border-l border-white/[0.06]">
-              <span className="text-[0.975rem] text-[#ff6b35]/70 uppercase tracking-widest">Business</span>
+            <div className="px-6 md:px-8 py-6 text-center border-l border-white/[0.06] bg-white/[0.01]">
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <span className="text-[0.975rem] text-[#ff6b35]/80 uppercase tracking-widest">Business</span>
+                <span className="text-[9px] font-medium text-[#ff6b35] px-2 py-0.5 rounded-full bg-[#ff6b35]/10 border border-[#ff6b35]/20 uppercase tracking-widest">Popular</span>
+              </div>
+              <div className="text-3xl md:text-4xl font-display font-800 gradient-text">$300</div>
+              <div className="text-xs text-white/20 mt-1">10 pages / project</div>
             </div>
           </div>
 
@@ -853,95 +862,47 @@ function Pricing() {
                   </svg>
                 )}
               </div>
-              <div className="px-6 md:px-8 py-4 flex items-center justify-center border-l border-white/[0.04]">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
+              <div className="px-6 md:px-8 py-4 flex items-center justify-center border-l border-white/[0.04] bg-white/[0.005]">
+                {row.business ? (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                ) : (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2" strokeLinecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                )}
               </div>
             </div>
           ))}
-        </div>
 
-        {/* Pricing cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Static Plan */}
-          <div className="bento-card p-8 md:p-10 relative">
-            <div className="flex items-center gap-3 mb-2">
-              <span className="text-xs font-mono text-white/20 tracking-widest uppercase">Plan A</span>
-              <div className="w-8 h-px bg-white/10" />
+          {/* Table footer with CTA */}
+          <div className="grid grid-cols-3 border-t border-white/[0.06]">
+            <div className="px-6 md:px-8 py-6">
+              <span className="text-[0.975rem] text-white/20">Ready to start?</span>
             </div>
-            <h3 className="text-2xl md:text-3xl font-display font-700 mb-2">Static Website</h3>
-            <p className="text-[0.975rem] text-white/30 mb-8">Clean, fast, and responsive — perfect for portfolios, landing pages, and small businesses.</p>
-
-            <div className="flex items-end gap-2 mb-8">
-              <span className="text-5xl md:text-6xl font-display font-800 gradient-text">$150</span>
-              <span className="text-[0.975rem] text-white/20 mb-2">/ project</span>
+            <div className="px-6 md:px-8 py-6 flex items-center justify-center border-l border-white/[0.06]">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[0.975rem] font-medium border border-white/10 text-white/50 hover:text-white hover:border-white/20 transition-all"
+              >
+                Get Started
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
             </div>
-
-            <div className="space-y-3 mb-8">
-              {["Up to 5 pages", "Custom responsive design", "SEO optimization", "Fast performance", "Animations & interactions", "Cross-browser tested"].map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span className="text-[0.975rem] text-white/40">{feature}</span>
-                </div>
-              ))}
+            <div className="px-6 md:px-8 py-6 flex items-center justify-center border-l border-white/[0.06] bg-white/[0.01]">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[0.975rem] font-medium bg-gradient-to-r from-[#ff6b35] to-[#ff8f5e] text-white hover:shadow-[0_0_30px_rgba(255,107,53,0.25)] transition-all duration-500"
+              >
+                Get Started
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
             </div>
-
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-[0.975rem] font-medium border border-white/10 text-white/60 hover:text-white hover:border-white/20 transition-all"
-            >
-              Get Started
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
-          </div>
-
-          {/* Business Plan */}
-          <div className="bento-card p-8 md:p-10 relative border-[#ff6b35]/15">
-            {/* Popular badge */}
-            <div className="absolute top-6 right-6">
-              <span className="text-[10px] font-medium text-[#ff6b35] px-3 py-1.5 rounded-full bg-[#ff6b35]/10 border border-[#ff6b35]/20 uppercase tracking-widest">Popular</span>
-            </div>
-
-            <div className="flex items-center gap-3 mb-2">
-              <span className="text-xs font-mono text-[#ff6b35]/50 tracking-widest uppercase">Plan B</span>
-              <div className="w-8 h-px bg-[#ff6b35]/20" />
-            </div>
-            <h3 className="text-2xl md:text-3xl font-display font-700 mb-2">Business Website</h3>
-            <p className="text-[0.975rem] text-white/30 mb-8">Full-featured with dashboard, CMS control, and everything you need to scale your business online.</p>
-
-            <div className="flex items-end gap-2 mb-8">
-              <span className="text-5xl md:text-6xl font-display font-800 gradient-text">$300</span>
-              <span className="text-[0.975rem] text-white/20 mb-2">/ project</span>
-            </div>
-
-            <div className="space-y-3 mb-8">
-              {["Up to 10 pages", "Custom responsive design", "SEO optimization", "Fast performance", "Animations & interactions", "Admin dashboard & CMS", "E-commerce integration", "Analytics setup", "Post-launch support"].map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ff6b35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span className="text-[0.975rem] text-white/40">{feature}</span>
-                </div>
-              ))}
-            </div>
-
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-[0.975rem] font-medium bg-gradient-to-r from-[#ff6b35] to-[#ff8f5e] text-white hover:shadow-[0_0_40px_rgba(255,107,53,0.3)] transition-all duration-500"
-            >
-              Get Started
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
-
-            {/* Subtle glow */}
-            <div className="absolute -bottom-20 -right-20 w-40 h-40 rounded-full bg-[#ff6b35]/[0.05] blur-[80px] pointer-events-none" />
           </div>
         </div>
       </div>
