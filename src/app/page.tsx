@@ -264,7 +264,7 @@ function Hero() {
 
       <div className="relative z-10 w-full flex flex-col lg:flex-row items-stretch px-6 md:px-10">
         {/* Left side — Text */}
-        <div className="flex-1 flex flex-col justify-center pt-28 pb-12 lg:py-0">
+        <div className="flex-1 flex flex-col justify-center pt-28 pb-20 lg:py-0 relative z-[3]">
           {/* Available badge */}
           <div className="flex items-center gap-3 mb-8 animate-fade-in-up">
             <span className="relative flex h-2.5 w-2.5">
@@ -385,21 +385,20 @@ function Hero() {
             <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#050505] to-transparent" />
           </div>
         </div>
-      </div>
-
-      {/* Bottom marquee */}
-      <div className="absolute bottom-0 left-0 right-0 border-t border-white/[0.04] py-4 overflow-hidden z-[2]">
-        <div className="animate-marquee whitespace-nowrap flex">
-          {[...Array(2)].map((_, si) => (
-            <span key={si} className="flex-shrink-0 flex items-center">
-              {Array(8).fill(0).map((_, i) => (
-                <span key={`${si}-${i}`} className="flex items-center mx-4 md:mx-6">
-                  <span className="text-lg md:text-2xl font-display font-600 text-white/[0.04]">Usman Milas</span>
-                  <span className="text-[#ff6b35]/20 ml-4 md:ml-6 text-xs">◆</span>
-                </span>
-              ))}
-            </span>
-          ))}
+        {/* Bottom marquee */}
+        <div className="absolute bottom-0 left-0 right-0 border-t border-white/[0.04] py-4 overflow-hidden z-[3]">
+          <div className="animate-marquee whitespace-nowrap flex">
+            {[...Array(2)].map((_, si) => (
+              <span key={si} className="flex-shrink-0 flex items-center">
+                {Array(8).fill(0).map((_, i) => (
+                  <span key={`${si}-${i}`} className="flex items-center mx-4 md:mx-6">
+                    <span className="text-lg md:text-2xl font-display font-600 text-white/[0.04]">Usman Milas</span>
+                    <span className="text-[#ff6b35]/20 ml-4 md:ml-6 text-xs">◆</span>
+                  </span>
+                ))}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
