@@ -262,7 +262,7 @@ function Hero() {
       <div className="absolute top-1/3 right-1/4 w-[600px] h-[600px] rounded-full bg-[#ff6b35]/[0.04] blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] rounded-full bg-[#c084fc]/[0.03] blur-[100px] pointer-events-none" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch px-6 md:px-10">
+      <div className="relative z-10 w-full flex flex-col lg:flex-row items-stretch px-6 md:px-10">
         {/* Left side — Text */}
         <div className="flex-1 flex flex-col justify-center pt-28 pb-12 lg:py-0">
           {/* Available badge */}
