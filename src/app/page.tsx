@@ -338,10 +338,11 @@ function Hero() {
                         fill
                         className="object-cover"
                       />
-                      {/* Subtle overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/50 to-transparent" />
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-[#050505]/30 to-[#050505]/10" />
+                      <div className="absolute inset-0 bg-[#ff6b35]/[0.03]" />
                       <div className="absolute bottom-3 left-3 right-3">
-                        <p className="text-xs font-display font-600 text-white/40">{project.title}</p>
+                        <p className="text-xs font-display font-600 text-white/50">{project.title}</p>
                       </div>
                     </div>
                   ))}
@@ -363,10 +364,11 @@ function Hero() {
                         fill
                         className="object-cover"
                       />
-                      {/* Subtle overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/50 to-transparent" />
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 via-[#050505]/30 to-[#050505]/10" />
+                      <div className="absolute inset-0 bg-[#c084fc]/[0.03]" />
                       <div className="absolute bottom-3 left-3 right-3">
-                        <p className="text-xs font-display font-600 text-white/40">{project.title}</p>
+                        <p className="text-xs font-display font-600 text-white/50">{project.title}</p>
                       </div>
                     </div>
                   ))}
