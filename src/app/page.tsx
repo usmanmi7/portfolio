@@ -172,7 +172,7 @@ function Loader({ onComplete }: { onComplete: () => void }) {
           }}
         />
       </div>
-      <p className="text-xs text-[var(--text-20)] mt-4 font-mono">{progress}%</p>
+      <p className="text-xs text-[var(--text-30)] mt-4 font-mono">{progress}%</p>
     </div>
   );
 }
@@ -366,7 +366,7 @@ function Hero() {
             ].map((stat, i) => (
               <div key={i} className="flex items-center gap-3">
                 <span className="text-2xl md:text-3xl font-display font-800 gradient-text">{stat.value}</span>
-                <span className="text-xs text-[var(--text-20)] uppercase tracking-widest">{stat.label}</span>
+                <span className="text-xs text-[var(--text-30)] uppercase tracking-widest">{stat.label}</span>
                 {i < 2 && <div className="w-px h-6 bg-[var(--border-6)] ml-5" />}
               </div>
             ))}
@@ -436,7 +436,7 @@ function Hero() {
         {[...Array(2)].map((_, si) => (
           <span key={si} className="flex-shrink-0 flex items-center">
             {["Vercel", "Stripe", "Notion", "Linear", "Figma", "Supabase", "Resend", "Clerk", "Prisma", "Railway"].map((company, i) => (
-              <span key={`${si}-${i}`} className="inline-flex items-center mx-6 md:mx-10 text-lg md:text-xl font-display font-600 text-[var(--text-7)] hover:text-[var(--text-15)] transition-colors cursor-default select-none">
+              <span key={`${si}-${i}`} className="inline-flex items-center mx-6 md:mx-10 text-lg md:text-xl font-display font-600 text-[var(--text-15)] hover:text-[var(--text-30)] transition-colors cursor-default select-none">
                 {company}
               </span>
             ))}
@@ -514,7 +514,7 @@ function About() {
               ].map((stat, i) => (
                 <div key={stat.label} className="flex flex-col">
                   <span className="text-2xl md:text-3xl font-display font-800 gradient-text mb-1">{stat.value}</span>
-                  <span className="text-[10px] text-[var(--text-20)] uppercase tracking-widest">{stat.label}</span>
+                  <span className="text-[10px] text-[var(--text-30)] uppercase tracking-widest">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -618,8 +618,8 @@ function Work() {
                 {/* Text content */}
                 <div className={`flex flex-col ${!isEven ? "lg:order-1 lg:text-right" : ""}`}>
                   <div className={`flex items-center gap-3 mb-4 ${!isEven ? "lg:justify-end" : ""}`}>
-                    <span className="text-xs text-[var(--text-20)] px-2.5 py-1 rounded-full border border-[var(--border-6)]">{project.tag}</span>
-                    <span className="text-xs text-[var(--text-20)]">{project.year}</span>
+                    <span className="text-xs text-[var(--text-30)] px-2.5 py-1 rounded-full border border-[var(--border-6)]">{project.tag}</span>
+                    <span className="text-xs text-[var(--text-30)]">{project.year}</span>
                   </div>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-display font-700 mb-4 group-hover:text-[#ff6b35] transition-colors duration-300">
                     {project.title}
@@ -758,14 +758,14 @@ function Services() {
               {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-6">
                 {service.tags.map((tag) => (
-                  <span key={tag} className="text-xs text-[var(--text-20)] px-3 py-1.5 rounded-full bg-[var(--surface-2)] border border-[var(--border-4)]">
+                  <span key={tag} className="text-xs text-[var(--text-30)] px-3 py-1.5 rounded-full bg-[var(--surface-2)] border border-[var(--border-4)]">
                     {tag}
                   </span>
                 ))}
               </div>
 
               {/* Bottom link */}
-              <div className="flex items-center gap-2 text-[0.975rem] text-[var(--text-20)] group-hover:text-[#ff6b35] transition-colors cursor-pointer">
+              <div className="flex items-center gap-2 text-[0.975rem] text-[var(--text-30)] group-hover:text-[#ff6b35] transition-colors cursor-pointer">
                 Learn more
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="group-hover:translate-x-1 transition-transform">
                   <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -788,7 +788,7 @@ function Services() {
             {[...Array(2)].map((_, si) => (
               <span key={si} className="flex-shrink-0 flex items-center">
                 {TECH_STACK.map((tech, i) => (
-                  <span key={`${si}-${i}`} className="mx-8 text-lg md:text-xl font-display font-600 text-[var(--text-7)] hover:text-[var(--text-20)] transition-colors cursor-default">
+                  <span key={`${si}-${i}`} className="mx-8 text-lg md:text-xl font-display font-600 text-[var(--text-15)] hover:text-[var(--text-30)] transition-colors cursor-default">
                     {tech}
                   </span>
                 ))}
@@ -826,7 +826,7 @@ const CheckIcon = () => (
 );
 
 const CrossIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="2" strokeLinecap="round">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--border-8)" strokeWidth="2" strokeLinecap="round">
     <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
   </svg>
 );
@@ -896,26 +896,26 @@ function Pricing() {
           {/* Table footer with prices and CTA */}
           <div className="grid grid-cols-4 border-t border-[var(--border-6)]">
             <div className="px-6 md:px-8 py-6">
-              <span className="text-[0.975rem] text-[var(--text-20)]">Price</span>
+              <span className="text-[0.975rem] text-[var(--text-30)]">Price</span>
             </div>
             <div className="px-6 md:px-8 py-6 text-center border-l border-[var(--border-6)]">
               <div className="text-2xl md:text-3xl font-display font-800 text-[var(--text-80)]">$150</div>
-              <div className="text-xs text-[var(--text-20)] mt-1">5 pages / project</div>
+              <div className="text-xs text-[var(--text-30)] mt-1">5 pages / project</div>
             </div>
             <div className="px-6 md:px-8 py-6 text-center border-l border-[var(--border-6)] bg-[var(--surface-2)]">
               <div className="text-2xl md:text-3xl font-display font-800 gradient-text">$300</div>
-              <div className="text-xs text-[var(--text-20)] mt-1">10 pages / project</div>
+              <div className="text-xs text-[var(--text-30)] mt-1">10 pages / project</div>
             </div>
             <div className="px-6 md:px-8 py-6 text-center border-l border-[var(--border-6)]">
               <div className="text-[0.975rem] text-[var(--text-30)]">Negotiable</div>
-              <div className="text-xs text-[var(--text-15)] mt-1">All options available</div>
+              <div className="text-xs text-[var(--text-25)] mt-1">All options available</div>
             </div>
           </div>
 
           {/* CTA row */}
           <div className="grid grid-cols-4 border-t border-[var(--border-6)]">
             <div className="px-6 md:px-8 py-6">
-              <span className="text-[0.975rem] text-[var(--text-20)]">Ready?</span>
+              <span className="text-[0.975rem] text-[var(--text-30)]">Ready?</span>
             </div>
             <div className="px-6 md:px-8 py-6 flex items-center justify-center border-l border-[var(--border-6)]">
               <a href="#contact" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[0.975rem] font-medium border border-[var(--border-10)] text-[var(--text-50)] hover:text-[var(--text-100)] hover:border-[var(--border-10)] transition-all">
@@ -988,27 +988,27 @@ function Contact() {
             <div className="space-y-5">
               {/* Email */}
               <a href="mailto:Webworks456@gmail.com" className="flex items-start gap-4 group">
-                <div className="w-11 h-11 rounded-xl bg-[var(--surface-3)] border border-[var(--border-6)] flex items-center justify-center flex-shrink-0 text-[var(--text-20)] group-hover:text-[#ff6b35] group-hover:border-[#ff6b35]/20 transition-all">
+                <div className="w-11 h-11 rounded-xl bg-[var(--surface-3)] border border-[var(--border-6)] flex items-center justify-center flex-shrink-0 text-[var(--text-30)] group-hover:text-[#ff6b35] group-hover:border-[#ff6b35]/20 transition-all">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                   </svg>
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-[var(--text-20)] block mb-1">Email</span>
-                  <span className="text-[0.975rem] text-[var(--text-40)] group-hover:text-[var(--text-60)] transition-colors">Webworks456@gmail.com</span>
+                  <span className="text-[10px] uppercase tracking-widest text-[var(--text-30)] block mb-1">Email</span>
+                  <span className="text-[0.975rem] text-[var(--text-50)] group-hover:text-[var(--text-80)] transition-colors">Webworks456@gmail.com</span>
                 </div>
               </a>
 
               {/* WhatsApp */}
               <a href="http://wa.me/+779194083" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
-                <div className="w-11 h-11 rounded-xl bg-[var(--surface-3)] border border-[var(--border-6)] flex items-center justify-center flex-shrink-0 text-[var(--text-20)] group-hover:text-[#ff6b35] group-hover:border-[#ff6b35]/20 transition-all">
+                <div className="w-11 h-11 rounded-xl bg-[var(--surface-3)] border border-[var(--border-6)] flex items-center justify-center flex-shrink-0 text-[var(--text-30)] group-hover:text-[#ff6b35] group-hover:border-[#ff6b35]/20 transition-all">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                   </svg>
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-[var(--text-20)] block mb-1">WhatsApp</span>
-                  <span className="text-[0.975rem] text-[var(--text-40)] group-hover:text-[var(--text-60)] transition-colors">0779194083</span>
+                  <span className="text-[10px] uppercase tracking-widest text-[var(--text-30)] block mb-1">WhatsApp</span>
+                  <span className="text-[0.975rem] text-[var(--text-50)] group-hover:text-[var(--text-80)] transition-colors">0779194083</span>
                 </div>
               </a>
             </div>
@@ -1017,7 +1017,7 @@ function Contact() {
             <div className="mt-10 pt-8 border-t border-[var(--border-6)] flex items-center gap-4">
               {SOCIAL_LINKS.filter((s) => s.label !== "WhatsApp").map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
-                  className="text-xs text-[var(--text-20)] hover:text-[#ff6b35] transition-colors uppercase tracking-widest">
+                  className="text-xs text-[var(--text-30)] hover:text-[#ff6b35] transition-colors uppercase tracking-widest">
                   {s.label}
                 </a>
               ))}
@@ -1041,33 +1041,33 @@ function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label htmlFor="name" className="block text-xs uppercase tracking-[0.15em] text-[var(--text-20)] mb-3">Name</label>
+                      <label htmlFor="name" className="block text-xs uppercase tracking-[0.15em] text-[var(--text-30)] mb-3">Name</label>
                       <input
                         id="name" type="text" required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-[var(--surface-3)] border border-[var(--border-6)] rounded-xl px-5 py-4 text-[var(--text-100)] placeholder:text-[var(--text-10)] focus:outline-none focus:border-[#ff6b35]/30 focus:ring-1 focus:ring-[#ff6b35]/10 transition-all"
+                        className="w-full bg-[var(--surface-3)] border border-[var(--border-6)] rounded-xl px-5 py-4 text-[var(--text-100)] placeholder:text-[var(--text-20)] focus:outline-none focus:border-[#ff6b35]/30 focus:ring-1 focus:ring-[#ff6b35]/10 transition-all"
                         placeholder="Your name"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-xs uppercase tracking-[0.15em] text-[var(--text-20)] mb-3">Email</label>
+                      <label htmlFor="email" className="block text-xs uppercase tracking-[0.15em] text-[var(--text-30)] mb-3">Email</label>
                       <input
                         id="email" type="email" required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-[var(--surface-3)] border border-[var(--border-6)] rounded-xl px-5 py-4 text-[var(--text-100)] placeholder:text-[var(--text-10)] focus:outline-none focus:border-[#ff6b35]/30 focus:ring-1 focus:ring-[#ff6b35]/10 transition-all"
+                        className="w-full bg-[var(--surface-3)] border border-[var(--border-6)] rounded-xl px-5 py-4 text-[var(--text-100)] placeholder:text-[var(--text-20)] focus:outline-none focus:border-[#ff6b35]/30 focus:ring-1 focus:ring-[#ff6b35]/10 transition-all"
                         placeholder="you@email.com"
                       />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-xs uppercase tracking-[0.15em] text-[var(--text-20)] mb-3">Message</label>
+                    <label htmlFor="message" className="block text-xs uppercase tracking-[0.15em] text-[var(--text-30)] mb-3">Message</label>
                     <textarea
                       id="message" required rows={6}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-[var(--surface-3)] border border-[var(--border-6)] rounded-xl px-5 py-4 text-[var(--text-100)] placeholder:text-[var(--text-10)] focus:outline-none focus:border-[#ff6b35]/30 focus:ring-1 focus:ring-[#ff6b35]/10 transition-all resize-none"
+                      className="w-full bg-[var(--surface-3)] border border-[var(--border-6)] rounded-xl px-5 py-4 text-[var(--text-100)] placeholder:text-[var(--text-20)] focus:outline-none focus:border-[#ff6b35]/30 focus:ring-1 focus:ring-[#ff6b35]/10 transition-all resize-none"
                       placeholder="Tell me about your project..."
                     />
                   </div>
@@ -1116,7 +1116,7 @@ function Footer() {
               <div className="flex items-center gap-4">
                 {SOCIAL_LINKS.map((s) => (
                   <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-lg bg-[var(--surface-3)] border border-[var(--border-6)] flex items-center justify-center text-[var(--text-20)] hover:text-[#ff6b35] hover:border-[#ff6b35]/20 transition-all"
+                    className="w-9 h-9 rounded-lg bg-[var(--surface-3)] border border-[var(--border-6)] flex items-center justify-center text-[var(--text-30)] hover:text-[#ff6b35] hover:border-[#ff6b35]/20 transition-all"
                     aria-label={s.label}
                   >
                     {s.label === "WhatsApp" && (
@@ -1232,10 +1232,10 @@ function Footer() {
       {/* ── Bottom copyright bar ── */}
       <div className="border-t border-[var(--border-4)] px-6 md:px-10 py-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-          <span className="text-xs text-[var(--text-15)]">
+          <span className="text-xs text-[var(--text-30)]">
             &copy; {new Date().getFullYear()} Usman Milas. All rights reserved.
           </span>
-          <p className="text-[10px] text-[var(--text-10)] uppercase tracking-widest">
+          <p className="text-[10px] text-[var(--text-20)] uppercase tracking-widest">
             Designed & built from Sri Lanka
           </p>
         </div>

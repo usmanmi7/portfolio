@@ -174,8 +174,8 @@ export default function WorkPage() {
                   {/* Text content */}
                   <div className={`flex flex-col ${!isEven ? "lg:order-1 lg:text-right" : ""}`}>
                     <div className={`flex items-center gap-3 mb-4 ${!isEven ? "lg:justify-end" : ""}`}>
-                      <span className="text-xs text-[var(--text-20)] px-2.5 py-1 rounded-full border border-[var(--border-6)]">{project.tag}</span>
-                      <span className="text-xs text-[var(--text-20)]">{project.year}</span>
+                      <span className="text-xs text-[var(--text-30)] px-2.5 py-1 rounded-full border border-[var(--border-6)]">{project.tag}</span>
+                      <span className="text-xs text-[var(--text-30)]">{project.year}</span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-700 mb-4 group-hover:text-[#ff6b35] transition-colors duration-300">
                       {project.title}
@@ -185,13 +185,13 @@ export default function WorkPage() {
                     </p>
                     <div className={`flex gap-2 ${!isEven ? "lg:justify-end" : ""}`}>
                       {project.tools.map((tool) => (
-                        <span key={tool} className="text-xs text-[var(--text-25)] px-3 py-1.5 rounded-full bg-[var(--surface-3)] border border-[var(--border-5)]">
+                        <span key={tool} className="text-xs text-[var(--text-30)] px-3 py-1.5 rounded-full bg-[var(--surface-3)] border border-[var(--border-5)]">
                           {tool}
                         </span>
                       ))}
                     </div>
                     <div className={`mt-6 ${!isEven ? "lg:text-right" : ""}`}>
-                      <span className="inline-flex items-center gap-2 text-[0.975rem] text-[var(--text-30)] group-hover:text-[#ff6b35] transition-colors cursor-pointer">
+                      <span className="inline-flex items-center gap-2 text-[0.975rem] text-[var(--text-40)] group-hover:text-[#ff6b35] transition-colors cursor-pointer">
                         View Project
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="group-hover:translate-x-1 transition-transform">
                           <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -212,7 +212,7 @@ export default function WorkPage() {
           <Link href="/" className="font-display font-700 text-lg tracking-tight">
             Usman<span className="text-[var(--text-30)]">.</span>
           </Link>
-          <p className="text-[0.975rem] text-[var(--text-20)]">
+          <p className="text-[0.975rem] text-[var(--text-30)]">
             &copy; {new Date().getFullYear()} Usman Milas. All rights reserved.
           </p>
         </div>
