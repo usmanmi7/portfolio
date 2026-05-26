@@ -36,7 +36,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="light" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");var c=t==="dark"?"dark":"light";document.documentElement.className=c}catch(e){document.documentElement.className="light"}})()`,
+          }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${syne.variable} antialiased bg-[var(--bg-base)] text-[var(--text-100)] overflow-x-hidden`}
       >

@@ -19,7 +19,7 @@ function themeReducer(state: Theme, action: { type: "set"; value: Theme } | { ty
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, dispatch] = useReducer(themeReducer, "dark");
+  const [theme, dispatch] = useReducer(themeReducer, "light");
   const initialized = useRef(false);
 
   useEffect(() => {
@@ -36,7 +36,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     const root = document.documentElement;
     if (theme === "light") {
       root.classList.add("light");
+      root.classList.remove("dark");
     } else {
+      root.classList.add("dark");
       root.classList.remove("light");
     }
     localStorage.setItem("theme", theme);

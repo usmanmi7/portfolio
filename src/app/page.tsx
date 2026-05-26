@@ -156,11 +156,11 @@ function Loader({ onComplete }: { onComplete: () => void }) {
 
   return (
     <div className="fixed inset-0 z-[100] bg-[var(--bg-base)] flex flex-col items-center justify-center">
-      <div className="text-center mb-12">
-        <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-[#ff6b35] to-[#c084fc] flex items-center justify-center mb-4 animate-pulse-glow">
+      <div className="flex flex-col items-center gap-8 mb-12">
+        <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-[#ff6b35] to-[#c084fc] flex items-center justify-center animate-pulse-glow">
           <span className="text-2xl md:text-3xl font-display font-800 text-white">U</span>
         </div>
-        <p className="text-xs tracking-[0.3em] text-[var(--text-30)] uppercase">
+        <p className="text-xs tracking-[0.3em] text-[var(--text-30)] uppercase text-center">
           Loading experience
         </p>
       </div>
