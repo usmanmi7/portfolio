@@ -1075,13 +1075,13 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="border-t border-white/[0.04]">
-      {/* CTA row */}
-      <div className="px-6 md:px-10 py-16 md:py-24">
+    <footer className="relative overflow-hidden">
+      {/* Top CTA area */}
+      <div className="border-t border-white/[0.04] px-6 md:px-10 py-20 md:py-28">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
           <div>
             <p className="text-[0.975rem] text-white/20 uppercase tracking-widest mb-3">Ready to start?</p>
-            <h3 className="text-3xl md:text-4xl font-display font-700">
+            <h3 className="text-3xl md:text-5xl font-display font-700">
               Let&apos;s work <span className="gradient-text">together</span>
             </h3>
           </div>
@@ -1097,33 +1097,73 @@ function Footer() {
         </div>
       </div>
 
-      {/* Divider */}
-      <div className="border-t border-white/[0.04]" />
+      {/* Big USMAN name section */}
+      <div className="relative py-16 md:py-24 border-t border-white/[0.04]">
+        {/* Background gradient orbs */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-[#ff6b35]/[0.03] blur-[150px] pointer-events-none" />
 
-      {/* Bottom bar */}
-      <div className="px-6 md:px-10 py-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#ff6b35] to-[#c084fc] flex items-center justify-center">
-              <span className="text-[10px] font-display font-800 text-white">U</span>
-            </div>
-            <span className="text-[0.975rem] text-white/20">
-              &copy; {new Date().getFullYear()} Usman Milas
-            </span>
+        <div className="relative z-10 text-center select-none">
+          <h2
+            className="text-[15vw] md:text-[12vw] lg:text-[10vw] font-display font-800 leading-[0.85] tracking-tighter"
+            style={{
+              background: 'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+          >
+            USMAN
+          </h2>
+        </div>
+
+        {/* Subtle line decorations */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+      </div>
+
+      {/* Navigation + Social row */}
+      <div className="border-t border-white/[0.04] px-6 md:px-10 py-10">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Nav links */}
+          <div className="flex items-center gap-6">
+            {["About", "Work", "Services", "Contact"].map((link) => (
+              <a
+                key={link}
+                href={link === 'Work' ? '/work' : `#${link.toLowerCase()}`}
+                className="text-[0.975rem] text-white/20 hover:text-white transition-colors duration-300 tracking-wide"
+              >
+                {link}
+              </a>
+            ))}
           </div>
 
-          <p className="text-xs text-white/15 text-center">
-            Designed & built from Sri Lanka
-          </p>
-
+          {/* Social links */}
           <div className="flex items-center gap-5">
             {SOCIAL_LINKS.map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
-                className="text-xs text-white/20 hover:text-[#ff6b35] transition-colors">
+                className="text-xs text-white/20 hover:text-[#ff6b35] transition-colors uppercase tracking-widest">
                 {s.label}
               </a>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* Bottom copyright bar */}
+      <div className="border-t border-white/[0.04] px-6 md:px-10 py-5">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div className="w-6 h-6 rounded-md bg-gradient-to-br from-[#ff6b35] to-[#c084fc] flex items-center justify-center">
+              <span className="text-[9px] font-display font-800 text-white">U</span>
+            </div>
+            <span className="text-xs text-white/15">
+              &copy; {new Date().getFullYear()} Usman Milas. All rights reserved.
+            </span>
+          </div>
+
+          <p className="text-[10px] text-white/10 uppercase tracking-widest">
+            Designed & built from Sri Lanka
+          </p>
         </div>
       </div>
     </footer>
