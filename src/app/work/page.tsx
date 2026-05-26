@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "@/context/ThemeContext";
 
 const PROJECTS = [
   {
@@ -45,6 +46,7 @@ const PROJECTS = [
 
 function WorkNav() {
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -55,7 +57,7 @@ function WorkNav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-[#050505]/80 backdrop-blur-xl border-b border-white/[0.04]" : ""
+        scrolled ? "bg-[var(--bg-nav-blur)] backdrop-blur-xl border-b border-[var(--border-4)]" : ""
       }`}
     >
       <div className="flex items-center px-6 md:px-10 py-4 md:py-5">
@@ -64,15 +66,15 @@ function WorkNav() {
             <span className="text-[0.975rem] font-display font-800 text-white">U</span>
           </div>
           <span className="font-display font-700 text-lg tracking-tight hidden sm:block">
-            Usman<span className="text-white/30">.</span>
+            Usman<span className="text-[var(--text-30)]">.</span>
           </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8 ml-8">
-          <Link href="/#about" className="text-[0.975rem] text-white/40 hover:text-white transition-colors duration-300 tracking-wide">About</Link>
+          <Link href="/#about" className="text-[0.975rem] text-[var(--text-40)] hover:text-[var(--text-100)] transition-colors duration-300 tracking-wide">About</Link>
           <span className="text-[0.975rem] text-[#ff6b35] transition-colors duration-300 tracking-wide">Work</span>
-          <Link href="/#services" className="text-[0.975rem] text-white/40 hover:text-white transition-colors duration-300 tracking-wide">Services</Link>
-          <Link href="/#contact" className="text-[0.975rem] text-white/40 hover:text-white transition-colors duration-300 tracking-wide">Contact</Link>
+          <Link href="/#services" className="text-[0.975rem] text-[var(--text-40)] hover:text-[var(--text-100)] transition-colors duration-300 tracking-wide">Services</Link>
+          <Link href="/#contact" className="text-[0.975rem] text-[var(--text-40)] hover:text-[var(--text-100)] transition-colors duration-300 tracking-wide">Contact</Link>
         </div>
 
         <div className="flex-1" />
@@ -80,13 +82,29 @@ function WorkNav() {
         <div className="flex items-center gap-4 flex-shrink-0">
           <Link
             href="/#contact"
-            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[0.975rem] font-medium bg-white text-[#050505] hover:bg-white/90 transition-all"
+            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[0.975rem] font-medium bg-[var(--text-100)] text-[var(--bg-base)] hover:bg-[var(--text-100)]/90 transition-all"
           >
             Let&apos;s Talk
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </Link>
+          {/* Theme toggle */}
+          <button
+            onClick={toggleTheme}
+            className="relative z-50 w-9 h-9 flex items-center justify-center rounded-xl bg-[var(--surface-5)] border border-[var(--border-6)] hover:bg-[var(--surface-5)]/80 transition-all"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+              </svg>
+            ) : (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
     </header>
@@ -99,7 +117,7 @@ function WorkNav() {
 
 export default function WorkPage() {
   return (
-    <div className="noise min-h-screen bg-[#050505] text-white">
+    <div className="noise min-h-screen bg-[var(--bg-base)] text-[var(--text-100)]">
       <WorkNav />
 
       {/* Hero banner */}
@@ -111,14 +129,14 @@ export default function WorkPage() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex items-center gap-4 mb-4">
             <span className="text-xs font-mono text-[#ff6b35] tracking-widest uppercase">02</span>
-            <div className="w-12 h-px bg-white/10" />
-            <span className="text-xs tracking-[0.2em] text-white/30 uppercase">Selected Work</span>
+            <div className="w-12 h-px bg-[var(--border-10)]" />
+            <span className="text-xs tracking-[0.2em] text-[var(--text-30)] uppercase">Selected Work</span>
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-800 leading-[0.92] tracking-tight mb-6">
             Projects I&apos;m{" "}
             <span className="gradient-text">proud of</span>
           </h1>
-          <p className="text-lg md:text-xl text-white/40 max-w-xl">
+          <p className="text-lg md:text-xl text-[var(--text-40)] max-w-xl">
             A curated selection of work that showcases my approach to design, development, and digital storytelling.
           </p>
         </div>
@@ -138,7 +156,7 @@ export default function WorkPage() {
                   }`}
                 >
                   {/* Image */}
-                  <div className={`relative aspect-[16/10] rounded-2xl overflow-hidden border border-white/[0.04] ${
+                  <div className={`relative aspect-[16/10] rounded-2xl overflow-hidden border border-[var(--border-4)] ${
                     !isEven ? "lg:order-2" : ""
                   }`}>
                     <Image
@@ -147,8 +165,8 @@ export default function WorkPage() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/40 to-transparent" />
-                    <div className="absolute top-6 left-6 text-6xl md:text-7xl font-display font-800 text-white/[0.04] select-none">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-alt)]/40 to-transparent" />
+                    <div className="absolute top-6 left-6 text-6xl md:text-7xl font-display font-800 text-[var(--text-4)] select-none">
                       0{i + 1}
                     </div>
                   </div>
@@ -156,24 +174,24 @@ export default function WorkPage() {
                   {/* Text content */}
                   <div className={`flex flex-col ${!isEven ? "lg:order-1 lg:text-right" : ""}`}>
                     <div className={`flex items-center gap-3 mb-4 ${!isEven ? "lg:justify-end" : ""}`}>
-                      <span className="text-xs text-white/20 px-2.5 py-1 rounded-full border border-white/[0.06]">{project.tag}</span>
-                      <span className="text-xs text-white/20">{project.year}</span>
+                      <span className="text-xs text-[var(--text-20)] px-2.5 py-1 rounded-full border border-[var(--border-6)]">{project.tag}</span>
+                      <span className="text-xs text-[var(--text-20)]">{project.year}</span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-700 mb-4 group-hover:text-[#ff6b35] transition-colors duration-300">
                       {project.title}
                     </h2>
-                    <p className="text-base text-white/35 leading-relaxed mb-6 max-w-md">
+                    <p className="text-base text-[var(--text-35)] leading-relaxed mb-6 max-w-md">
                       {project.desc}
                     </p>
                     <div className={`flex gap-2 ${!isEven ? "lg:justify-end" : ""}`}>
                       {project.tools.map((tool) => (
-                        <span key={tool} className="text-xs text-white/25 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.05]">
+                        <span key={tool} className="text-xs text-[var(--text-25)] px-3 py-1.5 rounded-full bg-[var(--surface-3)] border border-[var(--border-5)]">
                           {tool}
                         </span>
                       ))}
                     </div>
                     <div className={`mt-6 ${!isEven ? "lg:text-right" : ""}`}>
-                      <span className="inline-flex items-center gap-2 text-[0.975rem] text-white/30 group-hover:text-[#ff6b35] transition-colors cursor-pointer">
+                      <span className="inline-flex items-center gap-2 text-[0.975rem] text-[var(--text-30)] group-hover:text-[#ff6b35] transition-colors cursor-pointer">
                         View Project
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="group-hover:translate-x-1 transition-transform">
                           <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -189,12 +207,12 @@ export default function WorkPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/[0.04] px-6 md:px-10 py-10">
+      <footer className="border-t border-[var(--border-4)] px-6 md:px-10 py-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <Link href="/" className="font-display font-700 text-lg tracking-tight">
-            Usman<span className="text-white/30">.</span>
+            Usman<span className="text-[var(--text-30)]">.</span>
           </Link>
-          <p className="text-[0.975rem] text-white/20">
+          <p className="text-[0.975rem] text-[var(--text-20)]">
             &copy; {new Date().getFullYear()} Usman Milas. All rights reserved.
           </p>
         </div>
