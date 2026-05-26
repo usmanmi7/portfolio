@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useTheme } from "@/context/ThemeContext";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 const PROJECTS = [
   {
@@ -38,87 +38,20 @@ const PROJECTS = [
     desc: "Digital agency portfolio featuring creative transitions, 3D elements, and interactive storytelling.",
     tools: ["Webflow", "Three.js"],
   },
+  {
+    title: "Giros",
+    tag: "Creative",
+    year: "2025",
+    image: "/project-5.jpg",
+    desc: "Creative brand website with bold visuals, smooth interactions, and a modern design language.",
+    tools: ["Webflow", "GSAP"],
+  },
 ];
-
-/* ═══════════════════════════════════════════
-   NAVIGATION (minimal for work page)
-   ═══════════════════════════════════════════ */
-
-function WorkNav() {
-  const [scrolled, setScrolled] = useState(false);
-  const { theme, toggleTheme } = useTheme();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-[var(--bg-nav-blur)] backdrop-blur-xl border-b border-[var(--border-4)]" : ""
-      }`}
-    >
-      <div className="flex items-center px-6 md:px-10 py-4 md:py-5">
-        <Link href="/" className="relative z-50 flex items-center gap-2.5 flex-shrink-0">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#ff6b35] to-[#c084fc] flex items-center justify-center">
-            <span className="text-[0.975rem] font-display font-800 text-white">U</span>
-          </div>
-          <span className="font-display font-700 text-lg tracking-tight hidden sm:block">
-            Usman<span className="text-[var(--text-30)]">.</span>
-          </span>
-        </Link>
-
-        <div className="hidden md:flex items-center gap-8 ml-8">
-          <Link href="/#about" className="text-[0.975rem] text-[var(--text-40)] hover:text-[var(--text-100)] transition-colors duration-300 tracking-wide">About</Link>
-          <span className="text-[0.975rem] text-[#ff6b35] transition-colors duration-300 tracking-wide">Work</span>
-          <Link href="/#services" className="text-[0.975rem] text-[var(--text-40)] hover:text-[var(--text-100)] transition-colors duration-300 tracking-wide">Services</Link>
-          <Link href="/#contact" className="text-[0.975rem] text-[var(--text-40)] hover:text-[var(--text-100)] transition-colors duration-300 tracking-wide">Contact</Link>
-        </div>
-
-        <div className="flex-1" />
-
-        <div className="flex items-center gap-4 flex-shrink-0">
-          <Link
-            href="/#contact"
-            className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[0.975rem] font-medium bg-[var(--text-100)] text-[var(--bg-base)] hover:bg-[var(--text-100)]/90 transition-all"
-          >
-            Let&apos;s Talk
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </Link>
-          {/* Theme toggle */}
-          <button
-            onClick={toggleTheme}
-            className="relative z-50 w-9 h-9 flex items-center justify-center rounded-xl bg-[var(--surface-5)] border border-[var(--border-6)] hover:bg-[var(--surface-5)]/80 transition-all"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-              </svg>
-            ) : (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-              </svg>
-            )}
-          </button>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-/* ═══════════════════════════════════════════
-   WORK PAGE
-   ═══════════════════════════════════════════ */
 
 export default function WorkPage() {
   return (
     <div className="noise min-h-screen bg-[var(--bg-base)] text-[var(--text-100)]">
-      <WorkNav />
+      <Nav />
 
       {/* Hero banner */}
       <section className="pt-36 md:pt-44 pb-16 md:pb-20 px-6 md:px-10 relative overflow-hidden">
@@ -206,17 +139,7 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-[var(--border-4)] px-6 md:px-10 py-10">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <Link href="/" className="font-display font-700 text-lg tracking-tight">
-            Usman<span className="text-[var(--text-30)]">.</span>
-          </Link>
-          <p className="text-[0.975rem] text-[var(--text-30)]">
-            &copy; {new Date().getFullYear()} Usman Milas. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
