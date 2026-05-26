@@ -968,19 +968,6 @@ function Contact() {
 
             {/* Contact info items */}
             <div className="space-y-5">
-              {/* Office Address */}
-              <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center flex-shrink-0 text-white/20">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
-                  </svg>
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase tracking-widest text-white/20 block mb-1">Office</span>
-                  <span className="text-[0.975rem] text-white/40 leading-relaxed">Colombo, Sri Lanka</span>
-                </div>
-              </div>
-
               {/* Email */}
               <a href="mailto:Webworks456@gmail.com" className="flex items-start gap-4 group">
                 <div className="w-11 h-11 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center flex-shrink-0 text-white/20 group-hover:text-[#ff6b35] group-hover:border-[#ff6b35]/20 transition-all">
@@ -994,36 +981,23 @@ function Contact() {
                 </div>
               </a>
 
-              {/* Phone / WhatsApp */}
+              {/* WhatsApp */}
               <a href="http://wa.me/+779194083" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
                 <div className="w-11 h-11 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center flex-shrink-0 text-white/20 group-hover:text-[#ff6b35] group-hover:border-[#ff6b35]/20 transition-all">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                   </svg>
                 </div>
                 <div>
-                  <span className="text-[10px] uppercase tracking-widest text-white/20 block mb-1">Phone / WhatsApp</span>
-                  <span className="text-[0.975rem] text-white/40 group-hover:text-white/60 transition-colors">+94 77 919 4083</span>
-                </div>
-              </a>
-
-              {/* Fiverr */}
-              <a href="https://www.fiverr.com/webworks_456/" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
-                <div className="w-11 h-11 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center flex-shrink-0 text-white/20 group-hover:text-[#ff6b35] group-hover:border-[#ff6b35]/20 transition-all">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                  </svg>
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase tracking-widest text-white/20 block mb-1">Fiverr</span>
-                  <span className="text-[0.975rem] text-white/40 group-hover:text-white/60 transition-colors">webworks_456</span>
+                  <span className="text-[10px] uppercase tracking-widest text-white/20 block mb-1">WhatsApp</span>
+                  <span className="text-[0.975rem] text-white/40 group-hover:text-white/60 transition-colors">0779194083</span>
                 </div>
               </a>
             </div>
 
             {/* Social links row */}
             <div className="mt-10 pt-8 border-t border-white/[0.06] flex items-center gap-4">
-              {SOCIAL_LINKS.map((s) => (
+              {SOCIAL_LINKS.filter((s) => s.label !== "WhatsApp").map((s) => (
                 <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                   className="text-xs text-white/20 hover:text-[#ff6b35] transition-colors uppercase tracking-widest">
                   {s.label}
