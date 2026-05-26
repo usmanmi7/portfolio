@@ -1094,32 +1094,6 @@ function Contact() {
 function Footer() {
   return (
     <footer className="relative overflow-hidden">
-      {/* ── Big USMAN name hero section ── */}
-      <div className="relative py-20 md:py-32 border-t border-[var(--border-4)]">
-        {/* Background gradient orbs */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-[#ff6b35]/[0.03] blur-[150px] pointer-events-none" />
-
-        <div className="relative z-10 text-center select-none">
-          <h2
-            className="text-[18vw] md:text-[14vw] lg:text-[11vw] font-display font-800 leading-[0.85] tracking-tighter"
-            style={{
-              background: 'linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
-          >
-            USMAN
-          </h2>
-          <p className="text-[0.975rem] text-[var(--text-15)] uppercase tracking-[0.3em] mt-4">
-            Freelance Designer & Developer
-          </p>
-        </div>
-
-        {/* Subtle line decorations */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-[var(--border-6)] to-transparent" />
-      </div>
-
       {/* ── Multi-column footer content ── */}
       <div className="border-t border-[var(--border-4)] px-6 md:px-10 py-16 md:py-20">
         <div className="max-w-7xl mx-auto">
