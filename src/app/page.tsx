@@ -340,7 +340,7 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="py-24 md:py-36 px-6 md:px-10 relative overflow-hidden">
+    <section id="about" className="py-24 md:py-[125px] px-6 md:px-10 relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-[#ff6b35]/[0.02] blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#c084fc]/[0.02] blur-[100px] pointer-events-none" />
@@ -460,7 +460,7 @@ function About() {
 
 function Work() {
   return (
-    <section id="work" className="py-24 md:py-36 px-6 md:px-10">
+    <section id="work" className="py-24 md:py-[125px] px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <div className="flex items-center gap-4 mb-4">
@@ -574,7 +574,7 @@ function Services() {
   };
 
   return (
-    <section id="services" className="py-24 md:py-36 relative overflow-hidden">
+    <section id="services" className="py-24 md:py-[125px] relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#ff6b35]/[0.02] blur-[120px] pointer-events-none" />
 
@@ -719,7 +719,7 @@ const CrossIcon = () => (
 
 function Pricing() {
   return (
-    <section id="pricing" className="py-24 md:py-36 px-6 md:px-10 relative">
+    <section id="pricing" className="py-24 md:py-[125px] px-6 md:px-10 relative">
       {/* Background accent */}
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full bg-[#c084fc]/[0.02] blur-[120px] pointer-events-none" />
 
@@ -844,7 +844,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-36 px-6 md:px-10 relative">
+    <section id="contact" className="py-24 md:py-[125px] px-6 md:px-10 relative">
       {/* Background glow */}
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full bg-[#ff6b35]/[0.02] blur-[120px] pointer-events-none" />
 

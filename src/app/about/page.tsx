@@ -28,7 +28,7 @@ export default function AboutPage() {
       <Nav />
 
       {/* Hero banner */}
-      <section className="pt-36 md:pt-44 pb-16 md:pb-20 px-6 md:px-10 relative overflow-hidden">
+      <section className="pt-36 md:pt-[125px] pb-16 md:pb-20 px-6 md:px-10 relative overflow-hidden">
         {/* Decorative gradient orbs */}
         <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-[#ff6b35]/[0.03] blur-[120px] pointer-events-none" />
         <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] rounded-full bg-[#c084fc]/[0.02] blur-[100px] pointer-events-none" />
@@ -47,7 +47,7 @@ export default function AboutPage() {
       </section>
 
       {/* About content */}
-      <section className="pb-24 md:pb-36 px-6 md:px-10 relative overflow-hidden">
+      <section className="pb-24 md:pb-[125px] px-6 md:px-10 relative overflow-hidden">
         {/* Decorative background elements */}
         <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] rounded-full bg-[#ff6b35]/[0.02] blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#c084fc]/[0.02] blur-[100px] pointer-events-none" />

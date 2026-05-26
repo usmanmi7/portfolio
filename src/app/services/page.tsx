@@ -148,7 +148,7 @@ export default function ServicesPage() {
       <Nav />
 
       {/* Hero banner */}
-      <section className="pt-36 md:pt-44 pb-16 md:pb-20 px-6 md:px-10 relative overflow-hidden">
+      <section className="pt-36 md:pt-[125px] pb-16 md:pb-20 px-6 md:px-10 relative overflow-hidden">
         {/* Decorative gradient orbs */}
         <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-[#ff6b35]/[0.03] blur-[120px] pointer-events-none" />
         <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] rounded-full bg-[#c084fc]/[0.02] blur-[100px] pointer-events-none" />
@@ -170,7 +170,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Service cards carousel */}
-      <section className="pb-24 md:pb-36 relative overflow-hidden">
+      <section className="pb-24 md:pb-[125px] relative overflow-hidden">
         {/* Background accent */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-[#ff6b35]/[0.02] blur-[120px] pointer-events-none" />
 
@@ -267,7 +267,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Pricing table */}
-      <section className="py-24 md:py-36 px-6 md:px-10 relative">
+      <section className="py-24 md:py-[125px] px-6 md:px-10 relative">
         {/* Background accent */}
         <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full bg-[#c084fc]/[0.02] blur-[120px] pointer-events-none" />
 
