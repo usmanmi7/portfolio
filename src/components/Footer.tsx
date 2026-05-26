@@ -45,7 +45,7 @@ export default function Footer() {
                   Usman<span className="text-[var(--text-30)]">.</span>
                 </span>
               </Link>
-              <p className="text-[0.975rem] text-[var(--text-30)] leading-relaxed max-w-xs mb-6">
+              <p className="text-[0.975rem] font-medium text-[var(--text-30)] leading-relaxed max-w-xs mb-6">
                 Freelance designer & developer from Sri Lanka, crafting modern, responsive, and unforgettable digital experiences for brands worldwide.
               </p>
               {/* Social links row */}
@@ -80,7 +80,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-[0.975rem] text-[var(--text-25)] hover:text-[#ff6b35] transition-colors duration-300"
+                      className="text-[0.975rem] font-medium text-[var(--text-25)] hover:text-[#ff6b35] transition-colors duration-300"
                     >
                       {link.label}
                     </Link>
@@ -97,7 +97,7 @@ export default function Footer() {
                   <li key={service}>
                     <Link
                       href="/services"
-                      className="text-[0.975rem] text-[var(--text-25)] hover:text-[#ff6b35] transition-colors duration-300"
+                      className="text-[0.975rem] font-medium text-[var(--text-25)] hover:text-[#ff6b35] transition-colors duration-300"
                     >
                       {service}
                     </Link>
@@ -111,28 +111,28 @@ export default function Footer() {
               <h4 className="text-xs text-[var(--text-40)] uppercase tracking-widest mb-5 font-medium">Get in Touch</h4>
               <ul className="space-y-4">
                 <li>
-                  <p className="text-[0.975rem] text-[var(--text-25)]">Email</p>
+                  <p className="text-[0.975rem] font-medium text-[var(--text-25)]">Email</p>
                   <a
                     href="mailto:Webworks456@gmail.com"
-                    className="text-[0.975rem] text-[var(--text-50)] hover:text-[#ff6b35] transition-colors duration-300"
+                    className="text-[0.975rem] font-medium text-[var(--text-50)] hover:text-[#ff6b35] transition-colors duration-300"
                   >
                     Webworks456@gmail.com
                   </a>
                 </li>
                 <li>
-                  <p className="text-[0.975rem] text-[var(--text-25)]">WhatsApp</p>
+                  <p className="text-[0.975rem] font-medium text-[var(--text-25)]">WhatsApp</p>
                   <a
                     href="http://wa.me/+779194083"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[0.975rem] text-[var(--text-50)] hover:text-[#ff6b35] transition-colors duration-300"
+                    className="text-[0.975rem] font-medium text-[var(--text-50)] hover:text-[#ff6b35] transition-colors duration-300"
                   >
                     +94 77 919 4083
                   </a>
                 </li>
                 <li>
-                  <p className="text-[0.975rem] text-[var(--text-25)]">Location</p>
-                  <p className="text-[0.975rem] text-[var(--text-40)]">Colombo, Sri Lanka</p>
+                  <p className="text-[0.975rem] font-medium text-[var(--text-25)]">Location</p>
+                  <p className="text-[0.975rem] font-medium text-[var(--text-40)]">Colombo, Sri Lanka</p>
                 </li>
               </ul>
 

@@ -80,7 +80,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <span className="text-[10px] uppercase tracking-widest text-[var(--text-30)] block mb-1">Email</span>
-                    <span className="text-[0.975rem] text-[var(--text-50)] group-hover:text-[var(--text-80)] transition-colors">Webworks456@gmail.com</span>
+                    <span className="text-[0.975rem] font-medium text-[var(--text-50)] group-hover:text-[var(--text-80)] transition-colors">Webworks456@gmail.com</span>
                   </div>
                 </a>
 
@@ -93,7 +93,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <span className="text-[10px] uppercase tracking-widest text-[var(--text-30)] block mb-1">WhatsApp</span>
-                    <span className="text-[0.975rem] text-[var(--text-50)] group-hover:text-[var(--text-80)] transition-colors">0779194083</span>
+                    <span className="text-[0.975rem] font-medium text-[var(--text-50)] group-hover:text-[var(--text-80)] transition-colors">0779194083</span>
                   </div>
                 </a>
               </div>
@@ -120,7 +120,7 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <h3 className="text-xl font-display font-700 mb-2">Message Sent!</h3>
-                    <p className="text-[0.975rem] text-[var(--text-30)]">I&apos;ll get back to you within 24 hours.</p>
+                    <p className="text-[0.975rem] font-medium text-[var(--text-30)]">I&apos;ll get back to you within 24 hours.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">

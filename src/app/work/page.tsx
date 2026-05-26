@@ -124,7 +124,7 @@ export default function WorkPage() {
                       ))}
                     </div>
                     <div className={`mt-6 ${!isEven ? "lg:text-right" : ""}`}>
-                      <span className="inline-flex items-center gap-2 text-[0.975rem] text-[var(--text-40)] group-hover:text-[#ff6b35] transition-colors cursor-pointer">
+                      <span className="inline-flex items-center gap-2 text-[0.975rem] font-medium text-[var(--text-40)] group-hover:text-[#ff6b35] transition-colors cursor-pointer">
                         View Project
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="group-hover:translate-x-1 transition-transform">
                           <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

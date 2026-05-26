@@ -209,7 +209,7 @@ function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff6b35] opacity-75" />
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#ff6b35]" />
             </span>
-            <span className="text-[0.975rem] text-[var(--text-50)] tracking-wide">Available for freelance work</span>
+            <span className="text-[0.975rem] font-medium text-[var(--text-50)] tracking-wide">Available for freelance work</span>
           </div>
 
           {/* Main heading */}
@@ -522,7 +522,7 @@ function Work() {
                   </div>
                   {/* View project link */}
                   <div className={`mt-6 ${!isEven ? "lg:text-right" : ""}`}>
-                    <span className="inline-flex items-center gap-2 text-[0.975rem] text-[var(--text-30)] group-hover:text-[#ff6b35] transition-colors cursor-pointer">
+                    <span className="inline-flex items-center gap-2 text-[0.975rem] font-medium text-[var(--text-30)] group-hover:text-[#ff6b35] transition-colors cursor-pointer">
                       View Project
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="group-hover:translate-x-1 transition-transform">
                         <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -637,7 +637,7 @@ function Services() {
               <h3 className="text-xl md:text-2xl font-display font-700 mb-4 group-hover:text-[#ff6b35] transition-colors duration-300">
                 {service.title}
               </h3>
-              <p className="text-[0.975rem] text-[var(--text-30)] leading-relaxed mb-6">
+              <p className="text-[0.975rem] font-medium text-[var(--text-30)] leading-relaxed mb-6">
                 {service.desc}
               </p>
 
@@ -651,7 +651,7 @@ function Services() {
               </div>
 
               {/* Bottom link */}
-              <div className="flex items-center gap-2 text-[0.975rem] text-[var(--text-30)] group-hover:text-[#ff6b35] transition-colors cursor-pointer">
+              <div className="flex items-center gap-2 text-[0.975rem] font-medium text-[var(--text-30)] group-hover:text-[#ff6b35] transition-colors cursor-pointer">
                 Learn more
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="group-hover:translate-x-1 transition-transform">
                   <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -742,19 +742,19 @@ function Pricing() {
           {/* Table header — plan names only */}
           <div className="grid grid-cols-4 border-b border-[var(--border-6)]">
             <div className="px-6 md:px-8 py-5">
-              <span className="text-[0.975rem] text-[var(--text-30)] uppercase tracking-widest">Deliverable</span>
+              <span className="text-[0.975rem] font-medium text-[var(--text-30)] uppercase tracking-widest">Deliverable</span>
             </div>
             <div className="px-6 md:px-8 py-5 text-center border-l border-[var(--border-6)]">
-              <div className="text-[0.975rem] text-[var(--text-40)] uppercase tracking-widest">Static</div>
+              <div className="text-[0.975rem] font-medium text-[var(--text-40)] uppercase tracking-widest">Static</div>
             </div>
             <div className="px-6 md:px-8 py-5 text-center border-l border-[var(--border-6)] bg-[var(--surface-2)]">
               <div className="flex items-center justify-center gap-2">
-                <span className="text-[0.975rem] text-[#ff6b35]/80 uppercase tracking-widest">Business</span>
+                <span className="text-[0.975rem] font-medium text-[#ff6b35]/80 uppercase tracking-widest">Business</span>
                 <span className="text-[9px] font-medium text-[#ff6b35] px-2 py-0.5 rounded-full bg-[#ff6b35]/10 border border-[#ff6b35]/20 uppercase tracking-widest">Popular</span>
               </div>
             </div>
             <div className="px-6 md:px-8 py-5 text-center border-l border-[var(--border-6)]">
-              <div className="text-[0.975rem] text-[var(--text-40)] uppercase tracking-widest">Custom</div>
+              <div className="text-[0.975rem] font-medium text-[var(--text-40)] uppercase tracking-widest">Custom</div>
             </div>
           </div>
 
@@ -765,7 +765,7 @@ function Pricing() {
               className={`grid grid-cols-4 ${i < DELIVERABLES.length - 1 ? "border-b border-[var(--border-4)]" : ""} hover:bg-[var(--surface-2)] transition-colors`}
             >
               <div className="px-6 md:px-8 py-4">
-                <span className="text-[0.975rem] text-[var(--text-50)]">{row.item}</span>
+                <span className="text-[0.975rem] font-medium text-[var(--text-50)]">{row.item}</span>
               </div>
               <div className="px-6 md:px-8 py-4 flex items-center justify-center border-l border-[var(--border-4)]">
                 {row.static ? <CheckIcon /> : <CrossIcon />}
@@ -782,7 +782,7 @@ function Pricing() {
           {/* Table footer with prices and CTA */}
           <div className="grid grid-cols-4 border-t border-[var(--border-6)]">
             <div className="px-6 md:px-8 py-6">
-              <span className="text-[0.975rem] text-[var(--text-30)]">Price</span>
+              <span className="text-[0.975rem] font-medium text-[var(--text-30)]">Price</span>
             </div>
             <div className="px-6 md:px-8 py-6 text-center border-l border-[var(--border-6)]">
               <div className="text-2xl md:text-3xl font-display font-800 text-[var(--text-80)]">$150</div>
@@ -793,7 +793,7 @@ function Pricing() {
               <div className="text-xs text-[var(--text-30)] mt-1">10 pages / project</div>
             </div>
             <div className="px-6 md:px-8 py-6 text-center border-l border-[var(--border-6)]">
-              <div className="text-[0.975rem] text-[var(--text-30)]">Negotiable</div>
+              <div className="text-[0.975rem] font-medium text-[var(--text-30)]">Negotiable</div>
               <div className="text-xs text-[var(--text-25)] mt-1">All options available</div>
             </div>
           </div>
@@ -801,7 +801,7 @@ function Pricing() {
           {/* CTA row */}
           <div className="grid grid-cols-4 border-t border-[var(--border-6)]">
             <div className="px-6 md:px-8 py-6">
-              <span className="text-[0.975rem] text-[var(--text-30)]">Ready?</span>
+              <span className="text-[0.975rem] font-medium text-[var(--text-30)]">Ready?</span>
             </div>
             <div className="px-6 md:px-8 py-6 flex items-center justify-center border-l border-[var(--border-6)]">
               <a href="#contact" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[0.975rem] font-medium border border-[var(--border-10)] text-[var(--text-50)] hover:text-[var(--text-100)] hover:border-[var(--border-10)] transition-all">
@@ -883,7 +883,7 @@ function Contact() {
                 </div>
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-[var(--text-30)] block mb-1">Email</span>
-                  <span className="text-[0.975rem] text-[var(--text-50)] group-hover:text-[var(--text-80)] transition-colors">Webworks456@gmail.com</span>
+                  <span className="text-[0.975rem] font-medium text-[var(--text-50)] group-hover:text-[var(--text-80)] transition-colors">Webworks456@gmail.com</span>
                 </div>
               </a>
 
@@ -896,7 +896,7 @@ function Contact() {
                 </div>
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-[var(--text-30)] block mb-1">WhatsApp</span>
-                  <span className="text-[0.975rem] text-[var(--text-50)] group-hover:text-[var(--text-80)] transition-colors">0779194083</span>
+                  <span className="text-[0.975rem] font-medium text-[var(--text-50)] group-hover:text-[var(--text-80)] transition-colors">0779194083</span>
                 </div>
               </a>
             </div>
@@ -923,7 +923,7 @@ function Contact() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-display font-700 mb-2">Message Sent!</h3>
-                  <p className="text-[0.975rem] text-[var(--text-30)]">I&apos;ll get back to you within 24 hours.</p>
+                  <p className="text-[0.975rem] font-medium text-[var(--text-30)]">I&apos;ll get back to you within 24 hours.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">

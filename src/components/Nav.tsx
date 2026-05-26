@@ -55,7 +55,7 @@ export default function Nav() {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`text-[0.975rem] transition-colors duration-300 tracking-wide ${
+                className={`text-[0.975rem] font-medium transition-colors duration-300 tracking-wide ${
                   pathname === link.href
                     ? "text-[#ff6b35]"
                     : "text-[var(--text-40)] hover:text-[var(--text-100)]"
