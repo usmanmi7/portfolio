@@ -154,11 +154,6 @@ export default function ServicesPage() {
         <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] rounded-full bg-[#c084fc]/[0.02] blur-[100px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex items-center gap-4 mb-4">
-            <span className="text-xs font-mono text-[#ff6b35] tracking-widest uppercase">03</span>
-            <div className="w-12 h-px bg-[var(--border-10)]" />
-            <span className="text-xs tracking-[0.2em] text-[var(--text-30)] uppercase">What I Do</span>
-          </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-800 leading-[0.92] tracking-tight mb-6">
             Services &{" "}
             <span className="gradient-text">expertise</span>

@@ -60,11 +60,6 @@ export default function WorkPage() {
         <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] rounded-full bg-[#c084fc]/[0.02] blur-[100px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex items-center gap-4 mb-4">
-            <span className="text-xs font-mono text-[#ff6b35] tracking-widest uppercase">02</span>
-            <div className="w-12 h-px bg-[var(--border-10)]" />
-            <span className="text-xs tracking-[0.2em] text-[var(--text-30)] uppercase">Selected Work</span>
-          </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-800 leading-[0.92] tracking-tight mb-6">
             Projects I&apos;m{" "}
             <span className="gradient-text">proud of</span>
@@ -99,9 +94,6 @@ export default function WorkPage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-alt)]/40 to-transparent" />
-                    <div className="absolute top-6 left-6 text-6xl md:text-7xl font-display font-800 text-[var(--text-4)] select-none">
-                      0{i + 1}
-                    </div>
                   </div>
 
                   {/* Text content */}
