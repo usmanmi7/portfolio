@@ -23,21 +23,19 @@ export default function ContactPage() {
     setSending(true);
     setError("");
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: "YOUR_ACCESS_KEY_HERE",
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          subject: `New message from ${formData.name} — Portfolio`,
-          from_name: "Usman Milas Portfolio",
+          source: "contact",
         }),
       });
       const data = await res.json();
-      if (!data.success) {
-        setError("Failed to send. Please try again.");
+      if (!res.ok) {
+        setError(data.error || "Something went wrong.");
         return;
       }
       setSent(true);

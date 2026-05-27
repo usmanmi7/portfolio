@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email, message, source } = await req.json();
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -19,27 +20,14 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        access_key: process.env.WEB3FORMS_KEY,
+    await prisma.message.create({
+      data: {
         name,
         email,
         message,
-        subject: `New message from ${name} — Portfolio`,
-        from_name: "Usman Milas Portfolio",
-      }),
+        source: source || "landing",
+      },
     });
-
-    const data = await response.json();
-
-    if (!data.success) {
-      return NextResponse.json(
-        { error: "Failed to send message. Please try again." },
-        { status: 500 }
-      );
-    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
