@@ -87,7 +87,7 @@ export default function AdminDashboard() {
         <h1 className="text-3xl md:text-4xl font-display font-800 text-white mb-2">
           Dashboard
         </h1>
-        <p className="text-[var(--text-40)] mb-10">
+        <p className="text-white/40 mb-10">
           Overview of your portfolio message activity.
         </p>
 
@@ -96,7 +96,7 @@ export default function AdminDashboard() {
           {/* Total Messages */}
           <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6">
             <div className="flex items-center justify-between mb-4">
-              <span className="text-xs uppercase tracking-widest text-[var(--text-30)]">Total Messages</span>
+              <span className="text-xs uppercase tracking-widest text-white/30">Total Messages</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#ff6b35]">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
               </svg>
@@ -109,7 +109,7 @@ export default function AdminDashboard() {
           {/* Unread */}
           <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6">
             <div className="flex items-center justify-between mb-4">
-              <span className="text-xs uppercase tracking-widest text-[var(--text-30)]">Unread</span>
+              <span className="text-xs uppercase tracking-widest text-white/30">Unread</span>
               <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff6b35] opacity-75" />
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-[#ff6b35]" />
@@ -123,7 +123,7 @@ export default function AdminDashboard() {
           {/* This Week */}
           <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-6">
             <div className="flex items-center justify-between mb-4">
-              <span className="text-xs uppercase tracking-widest text-[var(--text-30)]">This Week</span>
+              <span className="text-xs uppercase tracking-widest text-white/30">This Week</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#c084fc]">
                 <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" />
               </svg>

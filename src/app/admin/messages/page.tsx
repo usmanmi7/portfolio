@@ -37,9 +37,9 @@ export default function AdminMessages() {
         return;
       }
       const data = await res.json();
-      setMessages(data.messages);
-      setTotal(data.total);
-      setUnreadCount(data.unreadCount);
+      setMessages(data.messages || []);
+      setTotal(data.total || 0);
+      setUnreadCount(data.unreadCount || 0);
     } catch {
       // silent
     } finally {
@@ -136,7 +136,7 @@ export default function AdminMessages() {
             <h1 className="text-3xl md:text-4xl font-display font-800 text-white mb-1">
               Messages
             </h1>
-            <p className="text-[var(--text-40)]">
+            <p className="text-white/40">
               {total} total{unreadCount > 0 && `, ${unreadCount} unread`}
             </p>
           </div>
