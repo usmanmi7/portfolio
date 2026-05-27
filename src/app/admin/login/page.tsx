@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useAdminTheme } from "@/lib/useAdminTheme";
 
 export default function AdminLogin() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const { theme, toggleTheme } = useAdminTheme();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,7 +39,24 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] flex items-center justify-center px-6">
+    <div className="min-h-screen bg-[var(--bg-base)] flex items-center justify-center px-6">
+      {/* Theme toggle */}
+      <button
+        onClick={toggleTheme}
+        className="fixed top-6 right-6 w-9 h-9 flex items-center justify-center rounded-xl bg-[var(--surface-5)] border border-[var(--border-6)] hover:bg-[var(--surface-5)]/80 transition-all"
+        aria-label="Toggle theme"
+      >
+        {theme === "dark" ? (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+        ) : (
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        )}
+      </button>
+
       <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="flex justify-center mb-10">
@@ -46,7 +65,7 @@ export default function AdminLogin() {
           </div>
         </div>
 
-        <h1 className="text-2xl font-display font-700 text-white text-center mb-2">
+        <h1 className="text-2xl font-display font-700 text-[var(--text-100)] text-center mb-2">
           Admin Panel
         </h1>
         <p className="text-sm text-[var(--text-40)] text-center mb-8">
@@ -63,7 +82,7 @@ export default function AdminLogin() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-white/20 focus:outline-none focus:border-[#ff6b35]/30 focus:ring-1 focus:ring-[#ff6b35]/10 transition-all"
+              className="w-full bg-[var(--surface-3)] border border-[var(--border-6)] rounded-xl px-5 py-4 text-[var(--text-100)] placeholder:text-[var(--text-20)] focus:outline-none focus:border-[#ff6b35]/30 focus:ring-1 focus:ring-[#ff6b35]/10 transition-all"
               placeholder="Enter admin password"
             />
           </div>
