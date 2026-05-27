@@ -843,14 +843,21 @@ function Contact() {
     setSending(true);
     setError("");
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: "YOUR_ACCESS_KEY_HERE",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New message from ${formData.name} — Portfolio`,
+          from_name: "Usman Milas Portfolio",
+        }),
       });
       const data = await res.json();
-      if (!res.ok) {
-        setError(data.error || "Something went wrong.");
+      if (!data.success) {
+        setError("Failed to send. Please try again.");
         return;
       }
       setSent(true);
