@@ -9,7 +9,7 @@ from reportlab.lib import colors
 from reportlab.lib.units import inch, mm
 from reportlab.platypus import (
     SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle,
-    HRFlowable, KeepTogether
+    HRFlowable, KeepTogether, Image
 )
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
@@ -118,22 +118,68 @@ doc = SimpleDocTemplate(
 
 story = []
 
-# ── Header: Name & Title ──
-story.append(Paragraph('<b>Mohamed Usman Mohamed Milas</b>', name_style))
-story.append(Paragraph('Freelance Web Designer &amp; Developer', subtitle_style))
+# ── Header: Profile Picture + Name & Contact ──
+PROFILE_IMG = "/home/z/my-project/public/about.jpg"
+PHOTO_SIZE = 85  # px height for the photo
 
-# Contact info row
+# Photo on right, name/contact on left
+photo = Image(PROFILE_IMG, width=PHOTO_SIZE, height=PHOTO_SIZE)
+photo.hAlign = 'RIGHT'
+
+# Name and title
+name_para = Paragraph('<b>Mohamed Usman Mohamed Milas</b>', name_style)
+subtitle_para = Paragraph('Freelance Web Designer &amp; Developer', subtitle_style)
 contact_info = (
     '+94 77 919 4083 &nbsp;|&nbsp; '
     'mohamadusman200@gmail.com &nbsp;|&nbsp; '
     'Veyangoda, Gampaha, Sri Lanka'
 )
-story.append(Paragraph(contact_info, contact_style))
-story.append(Paragraph(
+contact_para = Paragraph(contact_info, contact_style)
+website_para = Paragraph(
     '<a href="https://web-works-portfolio.webflow.io/" color="#278b38">https://web-works-portfolio.webflow.io/</a>',
     ParagraphStyle(name='Website', fontName='LiberationSerif', fontSize=9.5, leading=13,
-                   textColor=ACCENT, alignment=TA_CENTER, spaceAfter=4)
-))
+                   textColor=ACCENT, alignment=TA_CENTER, spaceAfter=0)
+)
+
+# Left column: name, subtitle, contact, website
+left_content = Table(
+    [[name_para], [subtitle_para], [contact_para], [website_para]],
+    colWidths=[CONTENT_W - PHOTO_SIZE - 12],
+)
+left_content.setStyle(TableStyle([
+    ('LEFTPADDING', (0, 0), (-1, -1), 0),
+    ('RIGHTPADDING', (0, 0), (-1, -1), 0),
+    ('TOPPADDING', (0, 0), (-1, -1), 0),
+    ('BOTTOMPADDING', (0, 0), (-1, -1), 1),
+    ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+    ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+]))
+
+# Right column: photo
+right_cell = Table([[photo]], colWidths=[PHOTO_SIZE])
+right_cell.setStyle(TableStyle([
+    ('LEFTPADDING', (0, 0), (-1, -1), 6),
+    ('RIGHTPADDING', (0, 0), (-1, -1), 0),
+    ('TOPPADDING', (0, 0), (-1, -1), 4),
+    ('BOTTOMPADDING', (0, 0), (-1, -1), 0),
+    ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+    ('ALIGN', (0, 0), (-1, -1), 'RIGHT'),
+]))
+
+header_table = Table(
+    [[left_content, right_cell]],
+    colWidths=[CONTENT_W - PHOTO_SIZE - 12, PHOTO_SIZE + 6],
+)
+header_table.setStyle(TableStyle([
+    ('LEFTPADDING', (0, 0), (-1, -1), 0),
+    ('RIGHTPADDING', (0, 0), (-1, -1), 0),
+    ('TOPPADDING', (0, 0), (-1, -1), 0),
+    ('BOTTOMPADDING', (0, 0), (-1, -1), 0),
+    ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+]))
+
+story.append(header_table)
+story.append(Spacer(1, 4))
 
 story.append(HRFlowable(width="100%", thickness=1.5, color=ACCENT, spaceAfter=10))
 
