@@ -129,7 +129,7 @@ contact_info = (
 )
 story.append(Paragraph(contact_info, contact_style))
 story.append(Paragraph(
-    '<a href="https://web-works-portfolio.webflow.io/" color="#278b38">https://web-works-portfolio.webflow.io/</a>',
+    '<a href="https://portfolio-usman-milas.vercel.app/" color="#278b38">https://portfolio-usman-milas.vercel.app/</a>',
     ParagraphStyle(name='Website', fontName='LiberationSerif', fontSize=9.5, leading=13,
                    textColor=ACCENT, alignment=TA_CENTER, spaceAfter=4)
 ))
@@ -139,7 +139,7 @@ story.append(HRFlowable(width="100%", thickness=1.5, color=ACCENT, spaceAfter=10
 # ── Personal Information (with profile picture on right) ──
 story.extend(section_heading('Personal Information'))
 
-PROFILE_IMG = "/home/z/my-project/public/about.jpg"
+PROFILE_IMG = "/home/z/my-project/upload/portfolio_profile.jpg"
 PHOTO_W = 110
 PHOTO_H = 138
 
