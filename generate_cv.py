@@ -218,36 +218,20 @@ story.append(bullet('Problem Solving'))
 # ── Technical Skills ──
 story.extend(section_heading('Technical Skills'))
 
-tech_data = [
-    [Paragraph('<b>Programming</b>', body_style),
-     Paragraph('HTML, Python, PHP, JavaScript (Visual Studio, VS Code)', body_style)],
-    [Paragraph('<b>Design Tools</b>', body_style),
-     Paragraph('Figma (2 years - High-Fidelity UI Design, Wireframing &amp; Prototyping)', body_style)],
-    [Paragraph('<b>UX / UI</b>', body_style),
-     Paragraph('User Experience (UX) Design, User Interface (UI) Design, Responsive Design Systems', body_style)],
-    [Paragraph('<b>Web Optimization</b>', body_style),
-     Paragraph('Conversion Rate Optimization (CRO), SEO Fundamentals, Website Performance Optimization', body_style)],
-    [Paragraph('<b>Analytics</b>', body_style),
-     Paragraph('Google Analytics', body_style)],
-    [Paragraph('<b>Database</b>', body_style),
-     Paragraph('MySQL, XAMPP', body_style)],
-    [Paragraph('<b>Software</b>', body_style),
-     Paragraph('Microsoft Word, Excel, PowerPoint', body_style)],
-    [Paragraph('<b>Creative Tools</b>', body_style),
-     Paragraph('Photo Editing, Media Production, Digital Design', body_style)],
-    [Paragraph('<b>Web Platforms</b>', body_style),
-     Paragraph('WordPress, Webflow', body_style)],
-]
-
-tech_table = Table(tech_data, colWidths=[CONTENT_W * 0.22, CONTENT_W * 0.78])
-tech_table.setStyle(TableStyle([
-    ('VALIGN', (0, 0), (-1, -1), 'TOP'),
-    ('LEFTPADDING', (0, 0), (-1, -1), 0),
-    ('RIGHTPADDING', (0, 0), (-1, -1), 4),
-    ('TOPPADDING', (0, 0), (-1, -1), 2),
-    ('BOTTOMPADDING', (0, 0), (-1, -1), 2),
-]))
-story.append(tech_table)
+story.append(bullet('HTML, Python, PHP, JavaScript'))
+story.append(bullet('Figma (High-Fidelity UI Design) - 2 Years Experience'))
+story.append(bullet('Wireframing &amp; Prototyping'))
+story.append(bullet('User Experience (UX) Design'))
+story.append(bullet('User Interface (UI) Design'))
+story.append(bullet('Responsive Design Systems'))
+story.append(bullet('Conversion Rate Optimization (CRO)'))
+story.append(bullet('SEO Fundamentals'))
+story.append(bullet('Website Performance Optimization'))
+story.append(bullet('Google Analytics'))
+story.append(bullet('MySQL, XAMPP'))
+story.append(bullet('WordPress, Webflow'))
+story.append(bullet('Microsoft Word, Excel, PowerPoint'))
+story.append(bullet('Photo Editing, Media Production, Digital Design'))
 
 # ── Professional Experience ──
 story.extend(section_heading('Professional Experience'))
