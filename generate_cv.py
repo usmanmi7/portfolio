@@ -221,6 +221,14 @@ story.extend(section_heading('Technical Skills'))
 tech_data = [
     [Paragraph('<b>Programming</b>', body_style),
      Paragraph('HTML, Python, PHP, JavaScript (Visual Studio, VS Code)', body_style)],
+    [Paragraph('<b>Design Tools</b>', body_style),
+     Paragraph('Figma (2 years - High-Fidelity UI Design, Wireframing &amp; Prototyping)', body_style)],
+    [Paragraph('<b>UX / UI</b>', body_style),
+     Paragraph('User Experience (UX) Design, User Interface (UI) Design, Responsive Design Systems', body_style)],
+    [Paragraph('<b>Web Optimization</b>', body_style),
+     Paragraph('Conversion Rate Optimization (CRO), SEO Fundamentals, Website Performance Optimization', body_style)],
+    [Paragraph('<b>Analytics</b>', body_style),
+     Paragraph('Google Analytics', body_style)],
     [Paragraph('<b>Database</b>', body_style),
      Paragraph('MySQL, XAMPP', body_style)],
     [Paragraph('<b>Software</b>', body_style),
@@ -260,8 +268,16 @@ story.append(bullet(
     'JavaScript, WordPress, and Webflow.'
 ))
 story.append(bullet(
+    'Designed high-fidelity UI mockups, wireframes, and interactive prototypes using '
+    '<b>Figma</b> for client projects, with <b>2 years</b> of hands-on experience.'
+))
+story.append(bullet(
     'Collaborated on real client projects, improving UI/UX design, website structure, and '
     'performance optimization.'
+))
+story.append(bullet(
+    'Applied Conversion Rate Optimization (CRO) strategies and SEO fundamentals to improve '
+    'client website visibility and user engagement.'
 ))
 story.append(bullet(
     'Gained hands-on experience in professional web development workflows, client '
