@@ -139,7 +139,7 @@ story.append(HRFlowable(width="100%", thickness=1.5, color=ACCENT, spaceAfter=10
 # ── Personal Information (with profile picture on right) ──
 story.extend(section_heading('Personal Information'))
 
-PROFILE_IMG = "/home/z/my-project/upload/docx_images/image0.jpg"
+PROFILE_IMG = "/home/z/my-project/upload/docx_images_new/image1.jpg"
 PHOTO_W = 110
 PHOTO_H = 138
 
