@@ -103,7 +103,7 @@ export default function AboutPage() {
                     fill
                     className="object-cover object-top"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-portrait-overlay)] to-transparent" />
+
                 </div>
 
                 {/* Offset decorative border */}
