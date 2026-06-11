@@ -69,7 +69,7 @@ export default function AboutPage() {
               <p className="text-base md:text-lg text-[var(--text-40)] leading-relaxed mb-8 max-w-xl">
                 With over 4 years of hands-on experience and currently pursuing an HND in IT, the combination of my passion for <span className="text-[var(--text-100)] font-medium">design</span>,{" "}
                 <span className="text-[var(--text-100)] font-medium">code</span> &{" "}
-                <span className="text-[var(--text-100)] font-medium">interaction</span> positions me in a unique place in the web design world. Together we will set the new status quo — no nonsense, always on the cutting edge.
+                <span className="text-[var(--text-100)] font-medium">interaction</span> positions me in a unique place in the web design world. Together we will set the new status quo, no nonsense, always on the cutting edge.
               </p>
 
               {/* Mini skill tags */}

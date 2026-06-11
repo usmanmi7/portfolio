@@ -15,16 +15,16 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Usman Milas — Designer & Developer",
+  title: "Usman Milas | Designer & Developer",
   description:
-    "Crafting digital experiences that matter. Freelance web designer & developer from Sri Lanka — modern, responsive, user-focused.",
+    "Crafting digital experiences that matter. Freelance web designer & developer from Sri Lanka, modern, responsive, user-focused.",
   keywords: ["web designer", "freelance developer", "Sri Lanka", "Webflow", "WordPress", "portfolio"],
   authors: [{ name: "Usman Milas" }],
   icons: {
     icon: "/favicon.png",
   },
   openGraph: {
-    title: "Usman Milas — Designer & Developer",
+    title: "Usman Milas | Designer & Developer",
     description: "Crafting digital experiences that matter.",
     type: "website",
   },

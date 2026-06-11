@@ -86,7 +86,7 @@ export default function ContactPage() {
                 Get in <span className="gradient-text">touch</span>
               </h2>
               <p className="text-base md:text-lg text-[var(--text-30)] mb-12 max-w-sm">
-                Whether you have a question, a project idea, or just want to say hi — my inbox is always open.
+                Whether you have a question, a project idea, or just want to say hi, my inbox is always open.
               </p>
 
               {/* Contact info items */}

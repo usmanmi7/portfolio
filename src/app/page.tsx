@@ -67,7 +67,7 @@ const SERVICES = [
   {
     number: "02",
     title: "Web Development",
-    desc: "Clean, performant code that brings designs to life. From Webflow to custom solutions — fast, accessible, and built to scale with your business.",
+    desc: "Clean, performant code that brings designs to life. From Webflow to custom solutions, fast, accessible, and built to scale with your business.",
     tags: ["Webflow", "WordPress", "Next.js"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -100,7 +100,7 @@ const SERVICES = [
   {
     number: "05",
     title: "E-Commerce Solutions",
-    desc: "End-to-end online stores built for conversion. Shopify, WooCommerce, or custom platforms — seamless checkout, inventory management, and growth-ready.",
+    desc: "End-to-end online stores built for conversion. Shopify, WooCommerce, or custom platforms, seamless checkout, inventory management, and growth-ready.",
     tags: ["Shopify", "WooCommerce", "Payments"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -221,7 +221,7 @@ function Hero() {
 
           {/* Subline */}
           <p className="text-lg md:text-xl text-[var(--text-40)] max-w-md mb-10 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            Freelance designer & developer from Sri Lanka — building modern, responsive, and unforgettable websites.
+            Freelance designer & developer from Sri Lanka, building modern, responsive, and unforgettable websites.
           </p>
 
           {/* CTA buttons */}
@@ -378,7 +378,7 @@ function About() {
             <p className="text-base md:text-lg text-[var(--text-40)] leading-relaxed mb-8 max-w-xl">
               With over 4 years of hands-on experience and currently pursuing an HND in IT, the combination of my passion for <span className="text-[var(--text-100)] font-medium">design</span>,{" "}
               <span className="text-[var(--text-100)] font-medium">code</span> &{" "}
-              <span className="text-[var(--text-100)] font-medium">interaction</span> positions me in a unique place in the web design world. Together we will set the new status quo — no nonsense, always on the cutting edge.
+              <span className="text-[var(--text-100)] font-medium">interaction</span> positions me in a unique place in the web design world. Together we will set the new status quo, no nonsense, always on the cutting edge.
             </p>
 
             {/* Mini skill tags */}

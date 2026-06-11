@@ -24,7 +24,7 @@ const SERVICES = [
   {
     number: "02",
     title: "Web Development",
-    desc: "Clean, performant code that brings designs to life. From Webflow to custom solutions — fast, accessible, and built to scale with your business.",
+    desc: "Clean, performant code that brings designs to life. From Webflow to custom solutions, fast, accessible, and built to scale with your business.",
     tags: ["Webflow", "WordPress", "Next.js"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -57,7 +57,7 @@ const SERVICES = [
   {
     number: "05",
     title: "E-Commerce Solutions",
-    desc: "End-to-end online stores built for conversion. Shopify, WooCommerce, or custom platforms — seamless checkout, inventory management, and growth-ready.",
+    desc: "End-to-end online stores built for conversion. Shopify, WooCommerce, or custom platforms, seamless checkout, inventory management, and growth-ready.",
     tags: ["Shopify", "WooCommerce", "Payments"],
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
