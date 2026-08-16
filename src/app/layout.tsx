@@ -1,31 +1,42 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
-import { ThemeProvider } from "@/context/ThemeContext";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
 });
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
-  title: "Usman Milas | Designer & Developer",
+  title: "Usman Milas — Web Designer & Developer",
   description:
-    "Crafting digital experiences that matter. Freelance web designer & developer from Sri Lanka, modern, responsive, user-focused.",
-  keywords: ["web designer", "freelance developer", "Sri Lanka", "Webflow", "WordPress", "portfolio"],
+    "I design digital experiences that people remember. Freelance web designer and developer specializing in SaaS, business websites, and UI/UX design.",
+  keywords: [
+    "Usman Milas",
+    "Web Designer",
+    "Web Developer",
+    "UI/UX",
+    "SaaS",
+    "Freelance",
+    "Figma",
+    "WordPress",
+  ],
   authors: [{ name: "Usman Milas" }],
   icons: {
-    icon: "/favicon.png",
+    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
   },
   openGraph: {
-    title: "Usman Milas | Designer & Developer",
-    description: "Crafting digital experiences that matter.",
+    title: "Usman Milas — Web Designer & Developer",
+    description:
+      "I design digital experiences that people remember.",
     type: "website",
   },
 };
@@ -36,20 +47,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");var c=t==="dark"?"dark":"light";document.documentElement.className=c}catch(e){document.documentElement.className="light"}})()`,
-          }}
-        />
-      </head>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${plusJakartaSans.variable} antialiased bg-[var(--bg-base)] text-[var(--text-100)] overflow-x-hidden`}
+        className={`${jakarta.variable} ${inter.variable} antialiased bg-background text-foreground`}
       >
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        {children}
+        <Toaster />
       </body>
     </html>
   );
