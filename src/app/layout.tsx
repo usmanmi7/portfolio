@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Syne } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { ThemeProvider } from "@/context/ThemeContext";
 import "./globals.css";
 
@@ -8,8 +8,8 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const syne = Syne({
-  variable: "--font-syne",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
 });
@@ -45,7 +45,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${syne.variable} antialiased bg-[var(--bg-base)] text-[var(--text-100)] overflow-x-hidden`}
+        className={`${inter.variable} ${plusJakartaSans.variable} antialiased bg-[var(--bg-base)] text-[var(--text-100)] overflow-x-hidden`}
       >
         <ThemeProvider>
           {children}
